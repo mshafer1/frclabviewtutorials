@@ -1,0 +1,65 @@
+<script>
+    function toggleMenu() 
+    {
+        document.getElementById("mobileMenu").classList.toggle("w3-hide");
+    }
+    
+    function showAccordian(id, className, arrowClass = "fa-angle-right")
+    {
+        if($('#' + id).hasClass("w3-show"))
+        {
+            $("." + className).removeClass("w3-show");  
+            $("." + arrowClass).removeClass("fa-rotate-90"); 
+            console.log("hide")
+        }
+        else
+        {
+            $("." + className).removeClass("w3-show");   //hide all - make sure none of the others are open
+            $("." + arrowClass).removeClass("fa-rotate-90"); 
+            $('#arrow' + id).addClass('fa-rotate-90');
+            $('#' + id).addClass('w3-show');
+            console.log("show")
+        }
+        console.log("dropdown id: " + id)
+        console.log("dopdown class: " + className)
+        console.log("arrow class: " + arrowClass)
+    }
+    
+    function hidetoc()
+    {
+        className = 'toc';
+        arraowClass = 'fa-angle-right';
+        $("." + className).removeClass("w3-show");   //hide all - make sure none of the others are open
+        $("." + arrowClass).removeClass("fa-rotate-90"); 
+    }
+    
+    function hidemenu()
+    {
+        $("#mobileMenu").removeClass("w3-show");
+        $("#mobileMenu").addClass("w3-hide");
+    }
+</script>		
+<script src="/scripts/jquery.min.js"></script>
+
+<script>
+    $(document).ready(function() {
+
+  setHeight($('.filler'), $('#mobile-menu-bar'));
+
+  // When the window is resized the height might
+  // change depending on content. So to be safe
+  // we rerun the function
+  $(window).resize(function() {
+      setHeight($('.filler'), $('#mobile-menu-bar'));        
+  });
+
+});
+
+// sets height of element 1 to equal the height of element 2
+function setHeight(elem1, elem2) {
+    console.log("resize");
+  var height = elem2.height();
+  
+  elem1.css('height', height); 
+}
+</script>
