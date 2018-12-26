@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
 set -e # halt script on error
 
-jekyll build -d ./out
+bundle exec jekyll build -d ./out
 # bundle exec htmlproofer ./out --disable-external
