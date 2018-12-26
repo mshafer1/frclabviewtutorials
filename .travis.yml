@@ -3,8 +3,9 @@ rvm:
   - 2.4.1
 
 before_script:
- - chmod +x ./script/cibuild
+ - chmod +x ./cibuild
  - chmod +x ./deploy.sh
+
 
 script: bash ./deploy.sh
 env:
@@ -21,7 +22,7 @@ addons:
 # branch whitelist, only for GitHub Pages
 branches:
   only:
-  - gh-pages     # test the gh-pages branch
+  - master   # build the master branch and push to gh-pages
 
 sudo: false # route your build to the container-based infrastructure for a faster build
 
