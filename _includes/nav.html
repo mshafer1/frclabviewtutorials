@@ -1,0 +1,133 @@
+<div>
+    <nav class="w3-sidenav w3-large w3-light-grey w3-left-align w3-hide-medium w3-hide-small" style="">
+        <div class="w3-container w3-dark-grey">
+            <h4 class="w3-dark-grey">Menu</h4>
+        </div>
+        <!-- sideNav -->
+        <!--<img src="/images/camCat.png" alt="CamCat" style="width:90%; margin: 10px;"/>-->
+        <a class="w3-padding w3-hover-black" href="/">Home</a>		
+        <a class="w3-padding w3-hover-black" href="/type-def/">Type-def</a>	
+        
+        <div class="w3-accordion w3-light-grey">
+        <!--<a class="w3-padding w3-hover-black" href="#">Logs</a>	-->
+            <button onclick="showAccordian('SensorsNav','MenuAccordian', 'sensorsTop')" class="w3-btn-block w3-left-align w3-hover-black w3-light-grey">
+                Sensors <i id="arrowSensorsNav" class="fa fa-angle-right sensorsTop" aria-hidden="true"></i>
+            </button>	
+            <div id="SensorsNav" class="w3-accordion-content w3-container MenuAccordian">
+                <div class="w3-accordion w3-light-grey">
+                    <button onclick="showAccordian('SensorsDashboardNav','MenuAccordianSensors', 'sensorsSecond')" class="w3-btn-block w3-left-align w3-hover-black w3-light-grey">
+                        Dashboard <i id="arrowSensorsDashboardNav" class="fa fa-angle-right sensorsSecond" aria-hidden="true"></i>
+                    </button>	
+                    <div id="SensorsDashboardNav" class="w3-accordion-content w3-container MenuAccordianSensors">
+                        <a class="w3-padding w3-hover-black" href="/sensors/dashboard/arduino/">Arduino</a>		
+                        <a class="w3-padding w3-hover-black" href="/sensors/dashboard/gyro/">Gyro</a>		
+                    </div>
+                </div>
+                <div class="w3-accordion w3-light-grey">
+                    <button onclick="showAccordian('SensorsRoboRIONav','MenuAccordianSensors', 'sensorsSecond')" class="w3-btn-block w3-left-align w3-hover-black w3-light-grey">
+                        roboRIO <i id="arrowSensorsRoboRIONav" class="fa fa-angle-right sensorsSecond" aria-hidden="true"></i>
+                    </button>	
+                    <div id="SensorsRoboRIONav" class="w3-accordion-content w3-container MenuAccordianSensors">
+                        <a class="w3-padding w3-hover-black" href="/sensors/roborio/limit-switch/">Limi Switch</a>		
+                        <a class="w3-padding w3-hover-black" href="/sensors/roborio/potentiometer/">Potentiometer</a>		
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="w3-accordion w3-light-grey">
+        <!--<a class="w3-padding w3-hover-black" href="#">Logs</a>	-->
+            <button onclick="showAccordian('ArcNav','MenuAccordian')" class="w3-btn-block w3-left-align w3-hover-black w3-light-grey">
+                Architectures <i id="arrowArcNav" class="fa fa-angle-right" aria-hidden="true"></i>
+            </button>	
+            <div id="ArcNav" class="w3-accordion-content w3-container MenuAccordian">
+                <a class="w3-padding w3-hover-black" href="/producer-consumer/">&#9;Producer Consumer</a>	
+                <a class="w3-padding w3-hover-black" href="/state-machine/">&#9;State Machine</a>					
+                <a class="w3-padding w3-hover-black" href="https://forums.ni.com/t5/FIRST-Robotics-Competition/Command-and-Control-Tutorial/ta-p/3534946" target="_blank">&#9;Command and Control</a>					
+            </div>
+        </div>
+        <div class="w3-accordion w3-light-grey">
+        <!--<a class="w3-padding w3-hover-black" href="#">Logs</a>	-->
+            <button onclick="showAccordian('OptNav','MenuAccordian')" class="w3-btn-block w3-left-align w3-hover-black w3-light-grey">
+                Optimizations <i id="arrowOptNav" class="fa fa-angle-right" aria-hidden="true"></i>
+            </button>	
+            <div id="OptNav" class="w3-accordion-content w3-container MenuAccordian">
+                <a class="w3-padding w3-hover-black" href="/teleop/">&#9;Teleop</a>	
+                <a class="w3-padding w3-hover-black" href="/autonomous/">&#9;Autonomous</a>					
+                <a class="w3-padding w3-hover-black" href="/profiledAuto/">&#9;Profiled Autonomous</a>					
+            </div>
+        </div>
+        <a class="w3-padding w3-hover-black" href="/fgv/">FGV</a>	
+        <a class="w3-padding w3-hover-black" href="/documentation/">Documentation</a>
+        <a class="w3-padding w3-hover-black" href="/memory-library/">Memory Library</a>
+        <div class="w3-accordion w3-light-grey">
+        <!--<a class="w3-padding w3-hover-black" href="#">Logs</a>	-->
+            <button onclick="showAccordian('ArchiveNav','MenuAccordian')" class="w3-btn-block w3-left-align w3-hover-black w3-light-grey">
+                Archives <i id="arrowArchiveNav" class="fa fa-angle-right" aria-hidden="true"></i>
+            </button>	
+            <div id="ArchiveNav" class="w3-accordion-content w3-container MenuAccordian">
+                2015-2016
+                <ol>
+                    <li><a class="w3-padding w3-hover-black" href="/switch-cameras/">Switching Cameras</a></li>
+                </ol>
+            </div>
+        </div>
+        <a class="w3-padding w3-hover-black" href="/contact_us/">Contact Us</a>
+    </nav>
+    
+    <div id="mobileMenuContainer" class="sticky-div">
+        <div style="height: 0px;" class="filler"></div>
+        <ul id="mobile-menu-bar" class="w3-navbar w3-large w3-black w3-hide-large w3-left-align w3-top">
+            <li class=" w3-hide-large w3-opennav w3-left">
+                <a href="javascript:void(0);" alt="open table of contents" onclick="toggleMenu(); hidetoc();"><i class="fa fa-bars" aria-hidden="true"></i></a>
+            </li>
+            <li id="tocMain2" class="w3-display-left w3-hide">
+                <div class="w3-accordion">
+                    <header class="w3-container w3-black w3-display-left " onclick="showAccordian('toc2', 'toc', 'fa-caret-square-o-right'); hidemenu();">
+                        <span style="color: white; display: inline-block;">Table of Contents <i id="arrowtoc2" class="fa fa-caret-square-o-right" aria-hidden="true"></i></span>
+                    </header>
+
+                    
+                </div>
+            </li>
+        </ul>
+        <div id="toc2" class="w3-accordion-content w3-container toc w3-light-grey w3-animate-top">
+                    </div>
+        <div id="mobileMenu" class="w3-hide w3-hide-large">
+            <ul class="w3-bar-block w3-left-align w3-large w3-light-grey w3-animate-top" style="margin-top: 0px; max-height: 100vh; overflow: scroll;">
+                <li><a class="w3-padding w3-hover-black" href="/">Home</a></li>
+                <li><a class="w3-padding w3-hover-black" href="/type-def/">Type-def</a></li>	
+                <li><a class="w3-padding w3-hover-black" href="/producer-consumer/">Architectures ->Producer Consumer</a></li>
+                <li><a class="w3-padding w3-hover-black" href="/state-machine/">Architectures ->State Machine</a></li>			
+                <li><a class="w3-padding w3-hover-black" href="https://forums.ni.com/t5/FIRST-Robotics-Competition/Command-and-Control-Tutorial/ta-p/3534946" target="_blank">Architectures ->Command and Control</a></li>			
+                <li><a class="w3-padding w3-hover-black" href="/teleop/">Optimizations->Teleop</a></li>
+                <li><a class="w3-padding w3-hover-black" href="/autonomous/">Optimizations->Autonomous</a></li>
+                <li><a class="w3-padding w3-hover-black" href="/profiledAuto/">Optimizations->Profiled Autonomous</a></li>
+                <li><a class="w3-padding w3-hover-black" href="/fgv/">FGV</a></li>	
+                <li><a class="w3-padding w3-hover-black" href="/documentation/">Documentation</a></li>
+                <li><a class="w3-padding w3-hover-black" href="/memory-library/">Memory Library</a></li>
+                <li><a class="w3-padding w3-hover-black" href="/sensors/dashboard/gyro/">Sensors->Dashboard->Gyro</a></li>		
+                <li><a class="w3-padding w3-hover-black" href="/sensors/dashboard/arduino/">Sensors->Dashboard->Arduino</a></li>			
+                <li><a class="w3-padding w3-hover-black" href="/sensors/roborio/limit-switch/">Sensors->RoboRIO->Limit Switch</a></li>
+                <li><a class="w3-padding w3-hover-black" href="/sensors/roborio/potentiometer/">Sensors->RoboRIO->Potentiometer</a></li>				
+                <li><div class="w3-accordion w3-light-grey">
+                <!--<a class="w3-padding w3-hover-black" href="#">Logs</a>	-->
+                    <button onclick="showAccordian('ArchiveNav2','MenuAccordian')" class="w3-btn-block w3-left-align w3-hover-black w3-light-grey">
+                        Archives <i id="arrowArchiveNav2" class="fa fa-angle-right" aria-hidden="true"></i>
+                    </button>	
+                    <div id="ArchiveNav2" class="w3-accordion-content w3-container MenuAccordian">
+                        <ul>
+                            <li>2015-2016
+                                <ol>
+                                    <li><a class="w3-padding w3-hover-black" href="/switch-cameras/">&#9;Switching Cameras</a></li>
+                                </ol>
+                            </li>
+                        </ul>				
+                    </div>
+                </div></li>
+                <li><a class="w3-padding w3-hover-black" href="/contact_us/">Contact Us</a></li>
+            </ul>
+        </div>
+    </div>
+    <div style="height: 0px;" class="filler"></div>
+</div>
