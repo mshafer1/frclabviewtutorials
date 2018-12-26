@@ -12,6 +12,8 @@ url: "http://www.frclabviewtutorials.com"
 # Build settings
 markdown: kramdown
 
+highlighter: null
+
 collections:
   tutorials:
     output: true
