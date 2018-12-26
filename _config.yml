@@ -1,0 +1,16 @@
+destination: _site
+exclude:
+  - buildSite.bat
+
+# Site settings
+title: FRC LabVIEW Tutorials
+description: > # this means to ignore newlines until the next yaml key.
+  This website was created for the express purpose of posting informative tutorials on the FRC control system programmed in LabVIEW.
+baseurl: ""
+url: "http://www.frclabviewtutorials.com"
+
+
+collections:
+  tutorials:
+    output: true
+    permalink: /:path
