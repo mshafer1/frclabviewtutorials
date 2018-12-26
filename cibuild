@@ -2,7 +2,11 @@
 set -e # halt script on error
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 bundle exec jekyll build -d out
+=======
+jekyll build -d ./out
+>>>>>>> still trying to get Travis to build this . . .
 # bundle exec htmlproofer ./out --disable-external
 =======
 bundle exec jekyll build -d _site
