@@ -1,20 +1,18 @@
 destination: _site
 exclude:
   - buildSite.bat
+  - deploy_key.enc
+  - Gemfile
+  - Gemfile.lock
+  - cibuild
+  - deploy.sh
 
 # Site settings
 title: FRC LabVIEW Tutorials
 description: > # this means to ignore newlines until the next yaml key.
   This website was created for the express purpose of posting informative tutorials on the FRC control system programmed in LabVIEW.
-baseurl: ""
-url: "http://www.frclabviewtutorials.com"
 
 # Build settings
 markdown: kramdown
 
 highlighter: null
-
-collections:
-  tutorials:
-    output: true
-    permalink: /:path
