@@ -4,11 +4,15 @@ set -e # halt script on error
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 bundle exec jekyll build -d out
 =======
 jekyll build -d ./out
 >>>>>>> still trying to get Travis to build this . . .
 =======
+=======
+bundle exec jekyll -v
+>>>>>>> requiring matching ruby versions,
 bundle exec jekyll build -d ./out
 >>>>>>> trying again . . .
 # bundle exec htmlproofer ./out --disable-external
