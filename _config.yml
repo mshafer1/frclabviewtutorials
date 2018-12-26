@@ -9,6 +9,8 @@ description: > # this means to ignore newlines until the next yaml key.
 baseurl: ""
 url: "http://www.frclabviewtutorials.com"
 
+# Build settings
+markdown: kramdown
 
 collections:
   tutorials:
