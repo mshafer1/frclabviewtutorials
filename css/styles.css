@@ -1,0 +1,153 @@
+/* CSS - Cascading Style Sheet */
+
+
+/* Palette color codes */
+
+
+/* Palette URL: http://paletton.com/#uid=3000u0kllllmC1tlZbpkHvhk3WD */
+
+
+/* end of Palette provided code */
+
+.bodyMain {
+    margin-left: 0px;
+    display: block;
+}
+
+@media (min-width: 995px) {
+    .bodyMain {
+        margin-left: 200px;
+    }
+}
+
+p {
+    font-size: 18px;
+}
+
+h1,
+h2,
+h3,
+h4 {
+    text-align: center;
+    color: red;
+}
+
+h5 {
+    color: red;
+    text-align: left;
+    font-size: 18px;
+}
+
+img.code {
+    display: block;
+    max-width: 600px;
+    max-width: 100%;
+    width: auto;
+    height: auto !important;
+    cursor: url('/images/download.png') 4 12, auto;
+    /*Icons made by Elegant Themes http://www.flaticon.com is licensed by http://creativecommons.org/licenses/by/3.0/  */
+}
+
+img.pic {
+    width: auto;
+    height: auto;
+    max-width: 100%;
+    height: auto !important;
+    cursor: zoom-in;
+}
+
+img.full
+{
+	display: block;
+	cursor: zoom-out;
+	min-width: 50%;
+	min-height: 50%;
+	width:auto;
+    height:auto;
+    max-width:100%;
+    max-height:100%;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+.bodyMain a {
+    color: blue;
+}
+
+.w3-bar-block li a {
+	display: block;
+}
+
+div.toc-div {
+	position:fixed;
+	right:0;
+	top:18px
+}
+
+.sticky-div {
+	position: fixed;
+	margin: 0;
+	padding: 0;
+	top: 0;
+	width: 100%;
+}
+
+
+
+
+/* from https://css-tricks.com/forums/topic/width-of-menu-items/ */
+
+
+/*----- Accordion -----*/
+
+
+/* from http://inspirationalpixels.com/tutorials/creating-an-accordion-with-html-css-jquery */
+
+.accordion,
+.accordion * {
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+.accordion {
+    overflow: hidden;
+    box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.25);
+    border-radius: 3px;
+    /*  background:#f7f7f7; */
+}
+
+
+/*----- Section Titles -----*/
+
+.accordion-section-title {
+    width: 100%;
+    padding: 15px;
+    display: inline-block;
+    border-bottom: 1px solid #1a1a1a;
+    background-color: #333;
+    transition: all linear 0.15s;
+    /* Type */
+    font-size: 1.200em;
+    text-shadow: 0px 1px 0px #1a1a1a;
+    color: #fff;
+}
+
+.accordion-section-title.active,
+.accordion-section-title:hover {
+    background-color: #4c4c4c;
+    /* Type */
+    text-decoration: none;
+}
+
+.accordion-section:last-child .accordion-section-title {
+    border-bottom: none;
+}
+
+
+/*----- Section Content -----*/
+
+.accordion-section-content {
+    padding: 15px;
+    display: none;
+}

@@ -1,0 +1,3 @@
+{% assign img_width = width | times: 2 | diviced_by: 3 %}
+{% assign img_height = height | times: 2 | diviced_by: 3 %}
+<p><img alt="{{ alt }}" src="{{ path }}" class="pic" onclick="showImage('{{ path }}');" title="Click to zoom in" style="width:{{ img_width }}px; height:{{ img_height  }}px;"></p>
