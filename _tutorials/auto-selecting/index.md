@@ -16,29 +16,28 @@ It is also possible to **type** the desired option - but when doing this (with t
 ### Adding options to auto code
 
 
-	Right click on the case structure in Autonomous
+Right click on the case structure in Autonomous
 
 
 {% include zoomableImage.html path='images/addingOptionsToAuto.png' alt='Right click the case structure' scaler='' height=1009 width=1678 %}
 
 
-	You see all of the cases that are currently there. You also have the option to delete the case that is shown when you right click.
+You see all of the cases that are currently there. You also have the option to delete the case that is shown when you right click.
 
 
 
-	Delete all cases you don't plan to use (keep anything you are planning to copy and paste later)
+Delete all cases you don't plan to use (keep anything you are planning to copy and paste later)
 
 
 
-	Add a case for every value that you would like to select (I encourage you to keep the blank, default case) and edit the code.
-	<br/>
-	You can change the label by double clicking and editing between the quote marks.
+Add a case for every value that you would like to select (I encourage you to keep the blank, default case) and edit the code.
+<br/>
+You can change the label by double clicking and editing between the quote marks.
 
 
 {% include zoomableImage.html path='images/forward.png' alt='Editing case values by double clicking header and changing string' scaler='' height=1009 width=1678 %}
 
-While this does allow for as many options as you desire, you have to type out the names for them multiple times 
-	(in auto and either in the Begin so they show in the list, or when you use them).
+While this does allow for as many options as you desire, you have to type out the names for them multiple times (in auto and either in the Begin so they show in the list, or when you use them).
 
 
 ### Creating an Enum

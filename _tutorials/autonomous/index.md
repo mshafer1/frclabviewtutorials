@@ -10,8 +10,10 @@ This optimization is not for the robot, rather it is for the developer. What is 
 ### Setup
 
 For the duration of this tutorial, it is assumed that the motors and joysticks have already been opened in Begin.vi, and that this robot has a wheeled shooter.
-<h3>Architecture</h3>
-<p>This configuration utilizes the [producer-consumer architecture](/producer-consumer).
+
+### Architecture
+
+This configuration utilizes the [producer-consumer architecture](/tutorials/producer-consumer).
 This allows the code for controlling the actuators to be in one single place (periodic tasks) and the code to control it to be in either 
 Teleop or Autonomous - depending on which mode the robot is in.
 
@@ -27,6 +29,7 @@ The disadvantage is because the movements are stored in a control, one must go t
 
 ### Autonomous.vi
 
+
 We start by adding a shooter speed to the default array of motor movements.
 
 {% include zoomableImage.html path='images/addingSpeed.png' alt='Adding the shooter speed to the array' scaler='' height=358 width=773 %}
@@ -40,7 +43,7 @@ In the block diagram, we enable the for loop that uses the array, and update the
 This loop will perform each instruction for the specified amount of time, then move onto the next instruction in the array. 
 By adding what the shooter's speed should be, it now controls the whole robot with this set of instructions.
 
-Using an [fgv](/fgv/) to pass the shooter speed to periodic tasks, the autonomous.vi is finished.
+Using an [fgv](/tutorials/fgv/) to pass the shooter speed to periodic tasks, the autonomous.vi is finished.
 
 {% include downloadableImage.html path='images/auto.png' alt='finishing up' height=423 width=709 %}
 
@@ -53,7 +56,7 @@ In periodic tasks, the fgv is read and the motor is set.
 ### Summary
 
 By using the array of movements and the fgv, no code is unnecessarily repeated (assuming that the drive code used in teleop is slightly different),
-and by using the [fgv](/fgv/), data checking can be performed that values that are input for the shooter speed are valid.
+and by using the [fgv](/tutorials/fgv/), data checking can be performed that values that are input for the shooter speed are valid.
 
 
 ### Possible Improvements
@@ -63,4 +66,4 @@ and by using the [fgv](/fgv/), data checking can be performed that values that a
 
 ### If this tutorial inadvertently leaves some details out, please tell us about it and we will update it.
 
-[Google Form to request details](https://docs.google.com/forms/d/1UbODQWDz7NuqA-_Bt2zzXWO6hTLlmWoB5HwroNHUtl4/viewform?usp=send_form)
+[Google Form to request details](https://docs.google.com/forms/d/1UbODQWDz7NuqA-_Bt2zzXWO6hTLlmWoB5HwroNHUtl4/viewform?usp=send_form){:target="_blank"}
