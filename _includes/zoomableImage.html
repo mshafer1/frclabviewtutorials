@@ -1,3 +1,3 @@
-{% assign img_width = width | times: 2 | diviced_by: 3 %}
-{% assign img_height = height | times: 2 | diviced_by: 3 %}
-<p><img alt="{{ alt }}" src="{{ path }}" class="pic" onclick="showImage('{{ path }}');" title="Click to zoom in" style="width:{{ img_width }}px; height:{{ img_height  }}px;"></p>
+{% assign img_width = include.width | times: 2 | divided_by: 3 %}
+{% assign img_height = include.height | times: 2 | divided_by: 3 %}
+<p><img alt="{{ include.alt }}" src="{{ include.path }}" class="pic" onclick="showImage('{{ include.path }}');" title="Click to zoom in" style="width:{{ img_width }}px; height:{{ img_height  }}px;"></p>

@@ -7,8 +7,8 @@ title: Home
 This website was created for the express purpose of posting informative tutorials on the FRC control system programmed in LabVIEW.  It is not intended to duplicate existing getting started guides, but to compliment them.
 
 Some of the good ones we are aware of are here: 
-* [WPI Getting Started](https://wpilib.screenstepslive.com/s/4485/m/13811)
-* [Team 358's](http://www.team358.org/files/programming/ControlSystem2015-2019/labview/index.php)
+* [WPI Getting Started](https://wpilib.screenstepslive.com/s/4485/m/13811){:target="_blank"}
+* [Team 358's](http://www.team358.org/files/programming/ControlSystem2015-2019/labview/index.php){:target="_blank"}
 * Others? (Let us know in the [contact us](/contact) page!)
 
 ## Request Tutorials
