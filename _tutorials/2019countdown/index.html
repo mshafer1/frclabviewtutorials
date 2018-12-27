@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+		<title>FRC 2018 Countdown</title>
+		<style>
+			div {
+				width: 448px;
+				margin-left: auto;
+				margin-right: auto;
+				
+			}
+			h1
+			{
+				margin-left: auto;
+				margin-right: auto;
+				text-align: center;
+			}
+			div iframe {
+				margin-left: auto;
+				margin-right: auto;
+				text-align: center;
+			}
+
+		</style>
+		<script>
+			function trigger_switch()
+			{
+				var now = new Date();
+				var now_utc = now.getTime() - (now.getTimezoneOffset() * 60000);
+				var millisTillBagAndTag = Date.UTC(2019, 2, 20, 4, 59, 0, 0) - now_utc; // Bag-And-Tag is 23:59 ET (UTC-5), so adding 5 hours (and bumping the day) to show in UTC.
+				if (millisTillBagAndTag < 0) {
+					 return; // do nothing
+				}
+				
+				setTimeout(bagged, millisTillBagAndTag);
+			}
+			function bagged()
+			{
+				return;
+			}
+			
+			
+			function trigger_switch_to_build()
+			{
+				var kickoffUTC = new Date(Date.UTC(2019, 0, 5, 15, 00, 0))
+				console.log(kickoffUTC);
+				var nowUTC = new Date();
+				console.log(nowUTC);
+				difference = kickoffUTC - nowUTC;
+				console.log(difference);
+				var millisTillKickoff = difference - 500;
+				
+				if (millisTillKickoff < 0) {
+					document.addEventListener("DOMContentLoaded", swap_for_bag_and_tag);
+					return; // do immediately
+				}
+				console.log(millisTillKickoff);
+				setTimeout(swap_for_bag_and_tag, millisTillKickoff);
+			}
+			function swap_for_bag_and_tag()
+			{			
+				// utc based version
+				div = document.getElementById('countdown');
+				// using Two-liner
+				// Counter size: Large
+				// Font size: 300%
+				div.innerHTML = '<iframe src="https://free.timeanddate.com/countdown/i61pgnvl/n24/cf12/cm0/cu4/ct0/cs1/ca0/co0/cr0/ss0/cac000/cpc000/pcfff/tcfff/fs300/szw320/szh135/iso2018-02-21T04:59:00/pd2" allowTransparency="true" frameborder="0" width="330" height="121"></iframe> \
+				<h1>Till your fate is sealed</h1> \
+				<h1>in a plastic bag</h1>';			
+				div.width = "330px";				
+			}
+			
+			trigger_switch_to_build()
+		</script>
+	</head>
+	<body>
+		<div id="countdown">
+			<iframe src="https://free.timeanddate.com/countdown/i61pc322/n179/cf12/cm0/cu4/ct0/cs0/ca0/co0/cr0/ss0/cac000/cpc000/pct/tcfff/fs300/szw448/szh189/iso2018-01-06T10:30:00/pd2" allowTransparency="true" frameborder="0" width="458" height="121">
+				Your browser does not support IFrames
+			</iframe>
+			
+				<h1>Till 
+				<a href="https://www.firstinspires.org/robotics/frc/kickoff-broadcast" target="_blank">
+					kickoff
+				</a>
+				</h1>			
+		</div>
+	</body>
+</html>
