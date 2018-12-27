@@ -5,8 +5,16 @@
 
 <body>
   {% include nav.html %}
-  {{ content }}
+  {% include lgImgPanel.html %}
+
+  <div id = "body" class="bodyMain">
+    {% include announcements.html %}
+    <h1 style="text-align: left;">FRC LabVIEW Tutorials - {{ page.title }}</h1>
+    {{ content }}
+  </div>
   {% include tracking.html  %}
+  {% include pageManipulation.html %}
+  {% include toc.html %}
 </body>
 
 </html>
