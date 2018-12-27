@@ -1,0 +1,35 @@
+
+<div id="tocMain" class="w3-card-4 w3-right w3-hide toc-div w3-hide-small w3-hide-medium">
+    <div class="w3-accordion">
+        <header class="w3-container w3-black" onclick="showAccordian('toc', 'toc', 'fa-caret-square-o-right')">
+            <h4 style="color: white" ><span class="w3-hide-small">Table of Contents</span> <i id="arrowtoc" class="fa fa-caret-square-o-right" aria-hidden="true"></i></h4>
+        </header>
+
+        <div id="toc" class="w3-accordion-content w3-container toc w3-white">
+        </div>
+    </div>
+</div>
+<script>
+    //$("#toc").append("<ol>");
+    inner = "";
+    $(".header").each(function(i) {
+        var current = $(this);
+        inner += "<li><a  onclick=\"showAccordian('toc', 'toc', 'fa-caret-square-o-right')\" id='link" + i + "' href='#sec_" + current.html().trim().replace(/ /g, '_') + "' title='" + current.attr("tagName") + "'>" + current.html().trim() + "</a></li>";
+    });
+    // console.log(inner)
+    // console.log(inner.length);
+    if (inner.length > 0) {
+        value = "<ol>" + inner + "</ol>";
+        $("#toc").html(value);
+        $("#toc2").html(value);
+        $("#tocMain").removeClass("w3-hide")
+        $("#tocMain2").removeClass("w3-hide")
+            //if clicking anywhere but on dropdown, close it.
+        $(document).bind('click', function(e) { //from http://stackoverflow.com/a/15098861
+            if ($(e.target).closest('.w3-accordion').length === 0) {
+                $(".toc").removeClass("w3-show"); //hide all - make sure none of the others are open
+                $(".fa-caret-square-o-right").removeClass("fa-rotate-90");
+            }
+        });
+    }
+</script>
