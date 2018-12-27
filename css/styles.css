@@ -20,6 +20,12 @@
     }
 }
 
+@media print {
+    .printHide {
+        display: none!important;
+    }
+}
+
 p {
     font-size: 18px;
 }
