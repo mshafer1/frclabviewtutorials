@@ -9,16 +9,17 @@ This website was created for the express purpose of posting informative tutorial
 Some of the good ones we are aware of are here: 
 * [WPI Getting Started](https://wpilib.screenstepslive.com/s/4485/m/13811){:target="_blank"}
 * [Team 358's](http://www.team358.org/files/programming/ControlSystem2015-2019/labview/index.php){:target="_blank"}
-* Others? (Let us know in the [contact us](/contact) page!)
+* Others? (Let us know in the [contact us](/contact_us) page!)
 
 ## Request Tutorials
 
-Please look around and see the available tutorials. More will come, but if you would like to request one be made for a specific purpose, fill out this form. 
+Please look around and see the available tutorials. More will come, but if you would like to request one be made for a specific purpose, please feel free to contact us.. 
 
-[Request tutoriasl](#) <!-- TODO: Disqus?? Google Form? Github Issue? -->
+See the [Contact Us](/contact_us) page for details.
 
 ## Contributing Tutorials
-&lt;!-- Coming Soon -->
+
+See [Writing](/tutorials/writing) for a quick guide on how to get started contributing.
 
 ## Please Note
 
