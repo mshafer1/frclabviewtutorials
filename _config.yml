@@ -7,6 +7,8 @@ exclude:
   - cibuild
   - deploy.sh
 
+permalink: /404.html
+
 # Site settings
 title: FRC LabVIEW Tutorials
 description: > # this means to ignore newlines until the next yaml key.
