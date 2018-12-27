@@ -36,10 +36,12 @@ And now the modified version:
 {% include downloadableImage.html path='images/New Vision Processing.png' alt='modified Vision Processing.vi' height=512 width=1518 %}
 
 As you can see, several changes were made:
+<br/>
 * Duplicate the generic camera set-up code for "USB 0" and "USB 1"
 * Run **both** Device References through the **WPI_CameraUpdate Camera Status.vi** (This step is critical, otherwise the camera feed will appear to try and change, but it will revert to the same camera)
 * The while loop can be left alone and used for actual processing of images
 * Call the custom made **WPI_DualCameraBackground Loop.vi**. Note that creating the second camera Device Reference input for this VI is part of the next step.
+
 
 
 ### WPI_DualCameraBackground Loop.vi

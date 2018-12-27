@@ -40,7 +40,7 @@ Save the control
 ### Getting the editing tool
 
 
-Download [autoProfiling.zip](files/autoProfiling.zip)
+<a href="files/files/autoProfiling.zip" download>Download autoProfiling.zip</a>
 
 
 

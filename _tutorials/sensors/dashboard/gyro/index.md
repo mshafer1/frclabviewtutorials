@@ -1,9 +1,7 @@
 ---
 layout: basic
-title: Gyro on the Dashboard
+title: Gyro - Dashboard
 ---
-
-
 
 ### To Display a Gyro on the Dashboard
 
@@ -53,4 +51,4 @@ Easiest way, open it, then open the Driver Station. The DS should recognize that
 
 #### If this tutorial inadvertently leaves some details out, please tell us about it and we will update it.
 
-[Google Form to request details](https://docs.google.com/a/harding.edu/forms/d/1CVKshcWipp6sm_QeKU9u_3dJnu0uTtFmsTgOA1soPP0/viewform?usp=send_form)
+[Google Form to request details](https://docs.google.com/a/harding.edu/forms/d/1CVKshcWipp6sm_QeKU9u_3dJnu0uTtFmsTgOA1soPP0/viewform?usp=send_form){:target="_blank"}

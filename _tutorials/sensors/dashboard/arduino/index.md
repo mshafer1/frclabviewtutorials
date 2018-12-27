@@ -1,6 +1,6 @@
 ---
 layout: basic
-title: Arduino on the Dashboard
+title: Arduino - Dashboard
 ---
 
 ### Background
@@ -9,7 +9,8 @@ Many of the years that the authors have been involved with FRC, we wanted to col
 
 The TI Launchpad allows for the input to the driverstation by acting as an extra Joystick but  requires a bit of setup and is only an input.
 
-Below is presented a setup that allows for an Arduino to be used for generic I/O on the Driver Station through the LabVIEW Interface for Arduino (now, [LINX](https://www.labviewmakerhub.com/doku.php?id=libraries:linx:start)).
+Below is presented a setup that allows for an Arduino to be used for generic I/O on the Driver Station through the LabVIEW Interface for Arduino (now, [LINX](https://www.labviewmakerhub.com/doku.php?id=libraries:linx:start){:target="_blank"}).
+
 
 For this tutorial, we will implement reading a potentiometer and displaying it on the Dashboard. The setup presented below can be used to read or write to/from any of the pins on the Arduino (including writing PWM out).
 
@@ -21,7 +22,7 @@ We wire 5V and Ground from the Arduino to the two outer pins of the potentiomete
 
 {% include zoomableImage.html path='images/wire_potentiometer.jpg' alt='Wire the potentiometer to A0' scaler='' height=612 width=816 %}
 
-The library we will use to interact with the Arduino from LabVIEW is called the LabVIEW Interface for Arduino (now, [LINX](https://www.labviewhacker.com/doku.php?id=libraries:linx:start)) which we need to download and install to LabVIEW.
+The library we will use to interact with the Arduino from LabVIEW is called the LabVIEW Interface for Arduino (now, [LINX](https://www.labviewhacker.com/doku.php?id=libraries:linx:start){:target="_blank"}) which we need to download and install to LabVIEW.
 
 {% include zoomableImage.html path='images/labVIEWMakerHubDownloadLinx.png' alt='On labviewmakerhub.com select download now' scaler='' height=728 width=1366 %}
 
@@ -44,7 +45,7 @@ To see where the installed library is in the palette, select 'Show in Palettes'
 Connect the Arduino to the computer and open LabVIEW 
 	(Note: The Arduino driver is needed for this step - 
 	you can download and install it with the default IDE at 
-	[Arduino.cc](http://arduino.cc))
+	[Arduino.cc](http://arduino.cc){:target="_blank"})
 
 
 From the launch screen (or any screen actually) select Tools -> MakerHub -> LINX -> 
@@ -80,8 +81,8 @@ In the configuration dialogue choose what you would like to name the project and
 In the Project Explorer window, select and open "Dashboard Main.vi"
 
 
-	This is a source code version of the default dashboard. 
-	Go to the block diagram (press CTRL + e or select Window -> Show Block Diagram).
+This is a source code version of the default dashboard. 
+Go to the block diagram (press CTRL + e or select Window -> Show Block Diagram).
 
 
 Scroll to the top (the region that is expected to be edited), and add a While Loop.
@@ -218,9 +219,9 @@ Easiest way, build it, open it, then open the Driver Station. The DS should reco
 
 ### Some possible improvements
 
-	- Use binary switches (connected to the DI/O pins) for selecting an Auto.
-	- Create an abort button to stop a sequence.
-	- Connect LEDs to the Arduino and turn them on when the robot detects something.
+* Use binary switches (connected to the DI/O pins) for selecting an Auto.
+* Create an abort button to stop a sequence.
+* Connect LEDs to the Arduino and turn them on when the robot detects something.
 
 ### If this tutorial inadvertently leaves some details out, please tell us about it and we will update it.
 

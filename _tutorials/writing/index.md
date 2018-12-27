@@ -29,9 +29,8 @@ One can use
 
 * Option1 - email
 	<br/>
-	You can email me your draf at [curator@frclabviewtutorials.com](mailto:curator@frclabviewtutorials.com). Once I have what I need to format your page, I will post it for peer review to the admin group.
+	You can email me your draft at [curator@frclabviewtutorials.com](mailto:curator@frclabviewtutorials.com). Once I have what I need to format your page, I will post it for peer review to the admin group.
 * Option2 - Github Pull request
 	<br/>
 	Now that the site is hosted on Github, you can fork the repo ([Github Repo link](https://github.com/mshafer1/frclabviewtutorials){:target="_blank"}), make your changes, and post a pull request to have your changes merged into the master branch (this will start the peer-review process).
-
 

@@ -13,8 +13,9 @@ When the authors of this website first started programming for FRC, we would get
 In the summer of 2016, we were able to actually do a performance test on this that showed that the following method significantly outperformed the DevRef get/set method. We gave our results to the people at NI that work on this, and they said the reason was the DevRef get allocated memory every time and they fixed that for the 2017 season (and presumabley onwards).<br/>
 For that reason, the following moves from being an optimization to reduce lag to being an optimization for the developer (by not causing him/her to type out a case sensitive name multiple and related less than great development methods).
 
-<h3>Initialize</h3>
-<p>Begin by opening the devices in Begin.vi, notice that we even skip setting the refnum, and just bundle everything.
+### Initialize
+
+Begin by opening the devices in Begin.vi, notice that we even skip setting the refnum, and just bundle everything.
 
 {% include downloadableImage.html path='images/init.png' alt='Setup' height=224 width=330 %}
 
@@ -23,17 +24,15 @@ Now, place an indicator on the front panel, here is another place where the [Typ
 
 {% include zoomableImage.html path='images/devRef.png' alt='Indicator' scaler='' height=768 width=1024 %}
 
+
 We can use these names in the Begin.vi block diagram as well - by switching the bundle for a bundle by name - this also bears other advantages like what is demonstrated in the [TypeDef tutorial](/type-def/)
 
 {% include downloadableImage.html path='images/beginWithTypeDef.png' alt='setting up the TypeDef' height=273 width=380 %}
 
-<img alt="" src="examples\Teleop\beginWithTypeDef.png" style="width: 220px; height: auto;" />
 
 For now, we copy the indicator from Begin, to Teleop and paste it on the front panel (and switch it to a control).
 
 {% include zoomableImage.html path='images/Teleop.png' alt='Teleop' scaler='' height=768 width=1304 %}
-
-<img alt="" src="examples\Teleop\Teleop.png" style="width: 220px; height: auto;" />
 
 We can connect both the control and the indicator to the terminal block, and connect the two in main.vi
 
@@ -49,4 +48,4 @@ This minor change to the architecture can permit Teleop to complete just a littl
 
 ### If this tutorial inadvertently leaves some details out, please tell us about it and we will update it.
 
-[Google Form to request details](https://docs.google.com/a/harding.edu/forms/d/1ZDh67B3i0bncr6dbTfLuGpHzn4Qwmzl5LdpjiVPbpcw/viewform?usp=send_form)
+[Google Form to request details](https://docs.google.com/a/harding.edu/forms/d/1ZDh67B3i0bncr6dbTfLuGpHzn4Qwmzl5LdpjiVPbpcw/viewform?usp=send_form){:target="_blank"}

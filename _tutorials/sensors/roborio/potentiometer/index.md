@@ -1,7 +1,8 @@
 ---
 layout: basic
-title: Potentiometer
+title: Potentiometer - RoboRIO
 ---
+
 
 ### Intro
 
@@ -11,12 +12,12 @@ decide between an encoder and a potentiometer for the feedback in the system.
 
 Several reasons that have been considered for the encoder are:
 
-	- Easier to swap out - since it doesn't matter how the encoder shaft is rotated when it is attached,  just that the manipulator is in a known state (i.e. down) when the robot is turned on.
-	- Harder to break - since they have an infinite number of rotations (within the lifespan of the sensor that is . . .)
+* Easier to swap out - since it doesn't matter how the encoder shaft is rotated when it is attached,  just that the manipulator is in a known state (i.e. down) when the robot is turned on.
+* Harder to break - since they have an infinite number of rotations (within the lifespan of the sensor that is . . .)
 
 Several reasons that have been considered for the potentiometer are:
 
-	- It does not matter where it is when the robot is turned on (since the physical setup of the potentiometer always corresponds to the actual)
+* It does not matter where it is when the robot is turned on (since the physical setup of the potentiometer always corresponds to the actual)
 
 The purpose of this tutorial is to show how to have the software on the robot allow for a potentiometer to account for this.
 
@@ -28,15 +29,14 @@ First, we must setup a potentiometer.
 
 {% include zoomableImage.html path='images/soldering.jpg' alt='Soldering the potentiometer' scaler='' height=816 width=612 %}
 
-We attached a knob to our potentiometer for testing purposes, 
-	but it would likely be attached to a motor or gear shaft in mechanics of the 
-	manipulator to be controlled.
+We attached a knob to our potentiometer for testing purposes, but it would likely be attached to a motor or gear shaft in mechanics of the manipulator to be controlled.
 
 {% include zoomableImage.html path='images/knob.jpg' alt='Soldering the potentiometer' scaler='' height=816 width=612 %}
 
 We also need to open the potentiometer in Begin.vi
 
 {% include downloadableImage.html path='images/setup.png' alt='Soldering the potentiometer' height=95 width=146 %}
+
 
 ### Basic Read
 
@@ -61,8 +61,7 @@ Wire from the inside of the selector terminal to the right shift register (in th
 {% include zoomableImage.html path='images/wire_shift_regiser.png' alt='wire the selector to the shift register' scaler='' height=537 width=777 %}
 
 Create a True constant in the False case and connect it to the tunnel. 
-This will cause the input of the shift register to default to False, 
-but to remember the True after that. 
+This will cause the input of the shift register to default to False, but to remember the True after that. 
 We can use this to decide when to initialize the values.
 
 We now want to move the GetDevRef VI into the false case.
@@ -77,8 +76,7 @@ And create a shift register for it.
 
 {% include zoomableImage.html path='images/new_shift_register.png' alt='Replace the tunnel with a Shift Register' scaler='' height=537 width=777 %}
 
-Move the Potentiometer Get VI after the case structure the True case and 
-	connect it's DevRef terminals to the shift registers and the output to the indicator.
+Move the Potentiometer Get VI after the case structure the True case and connect it's DevRef terminals to the shift registers and the output to the indicator.
 
 {% include zoomableImage.html path='images/potentiometer_get.png' alt='Connect the get to the shift registers' scaler='' height=537 width=777 %}
 
@@ -92,23 +90,20 @@ On the output wire, insert a subtract node.
 
 And create a constant. This can be used as the expected offset - 
 so that when the manipulator is in a known state (i.e. against a hard stop) 
-the VI can read 0 (if the known state is with the arm at the top of the potentiometer range,
- make it an add so that the sensor reads 1 at that point). <u>
- If the potentiometer is adjusted, only this constant needs to be changed to keep all 
- the set points the same</u>.
+the VI can read 0 (if the known state is with the arm at the top of the potentiometer range, make it an add so that the sensor reads 1 at that point).
+* If the potentiometer is adjusted, only this constant needs to be changed to keep all the set points the same.
 
 {% include zoomableImage.html path='images/offset_constant.png' alt='Create constant for offset.' scaler='' height=537 width=777 %}
 
 ### Reading offset from a file on load
 
-To move the offset value to being stored in a file 
-(this will enable use to later update it programmatically, but have it remembered across reboots),
- open a PuTTY session and enter a host name of RoboRIO-XXYY-FRC.local 
- -- where XXYY is your team number, as configured on the RoboRIO -- 
- (if using ethernet, you could also enter the RoboRIO's IP address. 
- Tools like [Advanced IP Scanner](http://www.advanced-ip-scanner.com/) 
- can help you find this if you don't know it.)
- {% include zoomableImage.html path='images/open_putty.png' alt='Open PuTTY' scaler='' height=448 width=466 %}
+To move the offset value to being stored in a file (this will enable use to later update it programmatically, but have it remembered across reboots),
+* open a PuTTY session and enter a host name of RoboRIO-XXYY-FRC.local 
+	-- where XXYY is your team number, as configured on the RoboRIO -- 
+ 	(if using ethernet, you could also enter the RoboRIO's IP address. 
+ 	Tools like [Advanced IP Scanner](http://www.advanced-ip-scanner.com/){:target="_blank"} can help you find this if you don't know it.)
+
+{% include zoomableImage.html path='images/open_putty.png' alt='Open PuTTY' scaler='' height=448 width=466 %}
 
 PuTTY will prompt you for a username and password. This is the same as you use on the web interface (default to admin, blank).
 
@@ -123,7 +118,7 @@ The first two values tell us what machine we are logged into
 (logged in as admin on roboRIO-3937-FRC in this case).
 After the colon, the current file path is displayed 
 (~ means home, similar to the user's directory on Windows). Finally, a pound sine indicates the end of the prompt.
- (because the prompt [is configurable in Linux](https://www.cyberciti.biz/tips/howto-linux-unix-bash-shell-setup-prompt.html),
+ (because the prompt [is configurable in Linux](https://www.cyberciti.biz/tips/howto-linux-unix-bash-shell-setup-prompt.html){:target="_blank"},
  this can be changed).
  <br/>
 We can find the absolute path by entering the command `pwd`.
@@ -160,7 +155,7 @@ you will see that the dashes have been replaced with w's - signifying that the w
 You can use a text editor like [vi](http://www.howtogeek.com/102468/a-beginners-guide-to-editing-text-files-with-vi/) to create the file, but we will show how to have 
 LabVIEW create it with a default value (this allows for less setup when moving between controllers).
 
-<p>First, move the offset constant into the False case of the Case Structure and reconnect it to the subtraction node. Then, also connect it to the while loop and create a shift register.
+First, move the offset constant into the False case of the Case Structure and reconnect it to the subtraction node. Then, also connect it to the while loop and create a shift register.
 
 {% include zoomableImage.html path='images/moving_const.png' alt='move the constant inside the False case.' scaler='' height=537 width=777 %}
 
@@ -204,7 +199,7 @@ We then add a Case Structure and connect the File Open's error out terminal to i
 
 {% include zoomableImage.html path='images/case_structure.png' alt='Click and control drag to expand the diagram.' scaler='' height=537 width=777 %}
 
- In the No Error case, we add a Read Text File VI (we set it to read 1 character, but later changed our minds on that.)
+In the No Error case, we add a Read Text File VI (we set it to read 1 character, but later changed our minds on that.)
 
 {% include zoomableImage.html path='images/read_file_1.png' alt='Create a read Text File in the No Error Case.' scaler='' height=696 width=844 %}
 
@@ -307,13 +302,13 @@ Wire the zero point to the tunnel so that it can start being used.
 
 At this point, we we add some comments, and do a diagram cleanup.
 
-{% include downloadableImage.html path='images/finished.png' alt='Finished VI.' height=407 width=1637 %}
+{% include downloadableImage.html path='images/finished.png' alt='Finished VI' height=407 width=1637 %}
+
 
 ### Summary
 
 This method allows a potentiometer's read to be quickly adjusted 
-- removing the disadvantage of having to get the shaft just right when making adjustments, 
-but keeping the advantage of a known position at startup (without always starting in the same spot).
+	* removing the disadvantage of having to get the shaft just right when making adjustments, but keeping the advantage of a known position at startup (without always starting in the same spot).
 
 
 **Always make sure the manipulator is not going to move based on an old config!** 
@@ -323,9 +318,9 @@ the robot; however, if this is implemented in Teleop, <u>pull the breakers to th
 
 ### Possible Improvements
 
-	- Change the create file case to make the necessary system execution calls to create the directory
-	- Customize the dashboard to have a button for the set position
+* Change the create file case to make the necessary system execution calls to create the directory
+* Customize the dashboard to have a button for the set position
 
 ### If this tutorial inadvertently leaves some details out, please tell us about it and we will update it.
 
-[Google Form to request details](https://docs.google.com/forms/d/e/1FAIpQLSeFfwmdTzcfjmf0jIidE-USjnL4z8DJTGH18JgZJCPMjnrEFw/viewform)
+[Google Form to request details](https://docs.google.com/forms/d/e/1FAIpQLSeFfwmdTzcfjmf0jIidE-USjnL4z8DJTGH18JgZJCPMjnrEFw/viewform){:target="_blank"}
