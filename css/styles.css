@@ -92,7 +92,14 @@ div.toc-div {
 	width: 100%;
 }
 
+/* from https://stackoverflow.com/a/36719802 */
+.mbtablestyle {
+        border-collapse: collapse;
 
+   > table, td, th {
+        border: 1px solid black;
+        }
+}
 
 
 /* from https://css-tricks.com/forums/topic/width-of-menu-items/ */

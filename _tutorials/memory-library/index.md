@@ -1,3 +1,7 @@
+---
+layout: basic
+title: Memory Libray
+---
 
 ### What is this
 
@@ -11,60 +15,29 @@ Pursuant with FRC Rule R13, FRC Team# 3937 has chosen this as their outlet to re
 
 Below is an inclusive list of the vi's included in the library and their function. All vi's are configured so <u>each instance</u> has its own memory (if used multiple times, each time is completely independent of the others).
 <br/>
-<ul>
-	<li>**Edge Detector**<br/>
+
+* Edge Detector**
+	<br/>
 	This vi can be used to detect the first time a signal becomes true, or false, or both. Its primary use is in conjunction with a joystick button and can be used to trigger an event on when the button is first pressed or similar using another mode.
-	</li>
-	<li>**SR Flip Flop**<br/>
-	This vi implements a software version of the hardware [JK Latch](https://en.wikipedia.org/wiki/Flip-flop_(electronics)#JK_latch) with an enable bit.
+
+* SR Flip Flop
+	<br/>
+	This vi implements a software version of the hardware [JK Latch](https://en.wikipedia.org/wiki/Flip-flop_(electronics)#JK_latch){:target="_blank"} with an enable bit.
 	<br/>
 	In short,
-	<table border="1 px solid black">
-		<tbody>
-			<tr>
-				<th colspan="4">Summary of SR Flip Flop Operation</th>
-			</tr>
-			<tr>
-				|Set
-				|Reset
-				|Enable
-				|Output
-			</tr>	
-			<tr>
-				|False
-				|False
-				|Either
-				|Previous Value (defaults to false, memory is retained)
-			</tr>
-			<tr>
-				|Either
-				|Either
-				|False
-				|Previous Value (defaults to false, memory is retained)
-			</tr>
-			<tr>
-				|True
-				|False
-				|True
-				|True
-			</tr>
-			<tr>
-				|False
-				|True
-				|True
-				|False
-			</tr>
-			<tr>
-				|True
-				|True
-				|True
-				|The opposite of the previous value
-			</tr>
-		</tbody>
-	<table>
-</ul>
-<h3>Example Usages</h3>
-<p>
+
+	|Summary of SR Flip Flop Operation|
+	| Set 	 |	Reset	|	Enable	| Output |
+	| ---	 |	---		|	---		|	---	 |
+	| False  | 	False 	|	Either	| Previous Value (defaults to false, memory is retained) |
+	| Either | 	Either 	|	False	| Previous Value (defaults to false, memory is retained) |
+	| True 	 | 	False 	|	True	| True |
+	| False  | 	True 	|	True	| False |
+	| True	 |  True	|	True	| The opposite of the previous value |
+			
+
+### Example Usages
+
 Once Per Press:
 {% include downloadableImage.html path='images/risingEdge.png' alt='Rising edge example' height=126 width=378 %}
 
@@ -77,19 +50,12 @@ Once Per Press:
 ### Download
 
 
-    [Click here](files/memory_library-1.0.1.2.vip) to download the latest version (we recommend uninstalling older versions before installing updates).
-    <br/> 
-    [VI Package Manager](http://www.ni.com/tutorial/12397/en/) required (likely already installed).
+<a href="files/memory_library-1.0.1.2.vip" download>Click here</a> to download the latest version (we recommend uninstalling older versions before installing updates).
+<br/> 
+[VI Package Manager](http://www.ni.com/tutorial/12397/en/) required (likely already installed){:target="_blank"}.
     
 
 
-    **Changelog**
-        <ul>
-            <li>
-                [1.0.0.1](files/memory_library-1.0.0.1.vip)
-                - initial release (2015)</li>
-            <li>
-                [1.0.1.2](files/memory_library-1.0.1.2.vip)
-                - update context help on VIs (2018)</li>
-        </ul>
-
+**Changelog**
+* <a href="files/memory_library-1.0.0.1.vip" download>1.0.0.1</a> - initial release (2015)
+* <a href="files/memory_library-1.0.1.2.vip" download>1.0.1.2</a> - update context help on VIs (2018)
