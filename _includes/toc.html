@@ -12,9 +12,9 @@
 <script>
     //$("#toc").append("<ol>");
     inner = "";
-    $(".header").each(function(i) {
+    $("h3").each(function(i) {
         var current = $(this);
-        inner += "<li><a  onclick=\"showAccordian('toc', 'toc', 'fa-caret-square-o-right')\" id='link" + i + "' href='#sec_" + current.html().trim().replace(/ /g, '_') + "' title='" + current.attr("tagName") + "'>" + current.html().trim() + "</a></li>";
+        inner += "<li><a  onclick=\"showAccordian('toc', 'toc', 'fa-caret-square-o-right')\" id='link" + i + "' href='#" + current.attr('id') + "' title='" + current.attr("tagName") + "'>" + current.html().trim() + "</a></li>";
     });
     // console.log(inner)
     // console.log(inner.length);
