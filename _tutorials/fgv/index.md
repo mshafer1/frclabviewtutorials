@@ -10,7 +10,7 @@ An FGV is a [standard LabVIEW data structure](https://decibel.ni.com/content/doc
 
 ### FGV vs. Global Variable
 
-The FGV is a data structure designed to help prevent  [race conditions]http://zone.ni.com/reference/en-XX/help/371361J-01/lvconcepts/using_local_and_global/#Race_Conditions){:target="_blank"}.
+The FGV is a data structure designed to help prevent  [race conditions](http://zone.ni.com/reference/en-XX/help/371361J-01/lvconcepts/using_local_and_global/#Race_Conditions){:target="_blank"}.
 However, if you are writing to your variable in one loop (for example, in Teleop), and reading from it in another (for example, periodic tasks), this will not cause a race condition.
 
 There are three criteria that should be considered when choosing to implement an FGV or a simple Global
