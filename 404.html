@@ -7,15 +7,13 @@ permalink: /404.html
 
 <!DOCTYPE html>
 
-<html lang="en">
+<html lang="en" style="height: 100%;">
 	<head>
 		<link rel="stylesheet" type="text/css" href="/css/w3.css">
 	</head>
-	<body style="background-image: url('/images/404.jpeg'); background-color: #cccccc; background-repeat: stretch;" >
-		<div style="height: 1000px; max-height: 100%; width: 100%; ">
-			<div class="w3-display-container w3-padding-top" style="height: 100%;">
-				<div class="w3-display-middle" style="color:white; background:rgba(0,0,0,0.5)">
-					{% include announcements.html %}
+	<body style="background-image: url('/images/404.jpeg'); background-color: #cccccc; background-repeat: none; height: 100%; margin: 0;" >
+		<div style="height: 1000px; max-height: 100%; width: 100%;" class="w3-display-container">
+				<div style="position: absolute; color:white; background:rgba(0,0,0,0.5); margin: auto; text-align: center;">
 					<h1>404</h1>
 					<br/>
 					<br/>
@@ -24,13 +22,17 @@ permalink: /404.html
 					<br/>
 					<h2>Looks like your lost in space . . .</h2>
 					<br/>
+
 					<p>I guess that link was bad.
+
+					{% include shortAnnouncements.html %}
+					<br/>
+					<br/>
 					<h1>Try searching for the tutorial you wanted.</h1>
 					<div style="width: 100%; max-width: 800px; margin-left: auto; margin-right: auto;">
 						{% include search.html %}
 					</div>
 				</div>
-			</div>
 		</div>
 	</body>
 </html>
