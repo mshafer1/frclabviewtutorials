@@ -1,6 +1,7 @@
 ---
 layout: basic
 title: Auto Selecting
+description: Using an Enum to make selecting and coding Autonomous mode options easier
 ---
 
 ### Adding options to the defualt autonomous

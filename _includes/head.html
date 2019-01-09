@@ -1,7 +1,11 @@
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
     <meta charset="utf-8">
-    <meta name="description" content="FRC LabVIEW Tutorials and examples">
+    {% if page.description %}
+        <meta name="description" content="FRC LabVIEW Tutorials and examples - {{ page.description }}">
+    {% else %}
+        <meta name="description" content="FRC LabVIEW Tutorials and examples">
+    {% endif %}
     <meta name="author" content="MShafer1">
 
     <title>{{ page.title }} | {{ site.title }}</title>

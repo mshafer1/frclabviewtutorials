@@ -1,6 +1,7 @@
 ---
 layout: basic
 title: File Based Autonomous (an easy way)
+description: A methodology for storing Autonomous configuration in the Autonomous.vi Front Panel to allow for multiple runs with tweaks without re-deploying code.
 ---
 
 ### Clarification
