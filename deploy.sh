@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/bin/bash -v
 set -e # Exit with nonzero exit code if anything fails
 
 # From https://gist.github.com/domenic/ec8b0fc8ab45f39403dd
