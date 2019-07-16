@@ -17,7 +17,11 @@ For the sake of this tutorial, we will construct a VI that takes in the DevRef's
 
 Just a formality, but we will start by opening the necessary hardware in Begin.vi. For this example, we will use two limit switches, a joystick, and a motor.
 
-{% include downloadableImage.html path='images/LimitSwitch_Begin.png' alt='Opening the limit switch in begin.vi' height=507 width=220 %}
+{% include downloadableImage.html path='images/LimitSwitch_Begin.png' alt='Opening the limit switch in begin.vi' height=278 width=653 %}
+
+Notice the Normally Closed false constants connected to the Limit Switch Open VIs. They work similarly to the Invert constant on the Motor Open VI. If you find the switch reports true when you expect false and false when you expect true, change the value of the Normally Closed input for that switch.
+
+{% include downloadableImage.html path='images/LimitSwitchOpen_ContextHelp.png' alt='Limit switch open Context Help' height=373 width=257 %}
 
 
 ### Actuator.vi
@@ -39,7 +43,7 @@ Now, this is good, but we wanted the limit switches to turn off the motor at its
 {% include downloadableImage.html path='images/LimitSwitch_BasicWLimits.png' alt='Basic use of limit switch' height=321 width=650 %}
 
 
-**NOTE: This is configured for the limit switch to report true when pressed, depending on how it is wired, this may be backwards, if this is the case, merely insert a not gate in between the read and the select.**
+**NOTE: If the limit switch reports true when you expect false and flase when you expect true, either insert a not function between the read and the select or change the value of the Normally Closed input to the Limit Switch Open VI.**
 
 At this point, the wiring is becoming a little chaotic, but we want to keep our constants so that this vi is generic and can be used year after year and by multiple teams, so we will switch to using multiple nested case structures.
 
