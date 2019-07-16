@@ -43,7 +43,7 @@ Now, this is good, but we wanted the limit switches to turn off the motor at its
 {% include downloadableImage.html path='images/LimitSwitch_BasicWLimits.png' alt='Basic use of limit switch' height=321 width=650 %}
 
 
-**NOTE: If the limit switch reports true when you expect false and flase when you expect true, either insert a not function between the read and the select or change the value of the Normally Closed input to the Limit Switch Open VI.**
+**NOTE: If the limit switch reports true when you expect false and false when you expect true, either insert a not function between the read and the select or change the value of the Normally Closed input to the Limit Switch Open VI.**
 
 At this point, the wiring is becoming a little chaotic, but we want to keep our constants so that this vi is generic and can be used year after year and by multiple teams, so we will switch to using multiple nested case structures.
 
