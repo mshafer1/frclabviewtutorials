@@ -22,27 +22,21 @@ REPO=`git config remote.origin.url`
 SSH_REPO=${REPO/https:\/\/github.com\//git@github.com:}
 SHA=`git rev-parse --verify HEAD`
 
-# Clone the existing gh-pages for this repo into out/
+# Clone the existing gh-pages for this repo into _site/
 # Create a new empty branch if gh-pages doesn't exist yet (should only happen on first deply)
-rm -rf out || true
-git clone $REPO out
-cd out
+rm -rf _site || true
+mkdir _site
 git checkout -b $TARGET_BRANCH || git checkout --orphan $TARGET_BRANCH
-git pull origin $TARGET_BRANCH
-cd ..
-
-# Clean out existing contents
-rm -rf out/**/* || exit 0
+git merge $SOURCE_BRANCH --squash
 
 # Run our compile script
 doCompile
 
 # Now let's go have some fun with the cloned repo
-cd out
 git config user.name "Travis CI"
 git config user.email "$COMMIT_AUTHOR_EMAIL"
 
-# If there are no changes to the compiled out (e.g. this is a README update) then just bail.
+# If there are no changes to the branch then just bail.
 if git diff --quiet; then
     echo "No changes to the output on this push; exiting."
     exit 0
