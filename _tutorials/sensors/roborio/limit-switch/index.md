@@ -21,7 +21,7 @@ Just a formality, but we will start by opening the necessary hardware in Begin.v
 
 Notice the Normally Closed false constants connected to the Limit Switch Open VIs. They work similarly to the Invert constant on the Motor Open VI. If you find the switch reports true when you expect false and false when you expect true, change the value of the Normally Closed input for that switch.
 
-{% include downloadableImage.html path='images/LimitSwitchOpen_ContextHelp.png' alt='Limit switch open Context Help' height=373 width=257 %}
+{% include zoomableImage.html path='images/LimitSwitchOpen_ContextHelp.png' alt='Limit Switch Open Context Help' height=373 width=257 %}
 
 
 ### Actuator.vi
@@ -42,8 +42,7 @@ Now, this is good, but we wanted the limit switches to turn off the motor at its
 
 {% include downloadableImage.html path='images/LimitSwitch_BasicWLimits.png' alt='Basic use of limit switch' height=321 width=650 %}
 
-
-**NOTE: If the limit switch reports true when you expect false and false when you expect true, either insert a Not function between the Read and the Select or change the value of the Normally Closed input to the Limit Switch Open VI.**
+**NOTE: If the limit switch reports true when you expect false and false when you expect true, either insert a Not function between the Read and the Select or change the value of the Normally Closed input to the Limit Switch Open VI. If (a) you wire the switch with the roboRIO's GND and Sig wires (like you should) (b) the wires connect to the GND and Normally Open (NO) terminals on the switch (regardless of which wire goes to which terminal) and (c) the Switch Open VI has a False constant wired to its Normally Closed input (or is not wired at all), the Switch Get VI will output True when the switch is pressed (closed) and False when the switch is not pressed (open).**
 
 At this point, the wiring is becoming a little chaotic, but we want to keep our constants so that this vi is generic and can be used year after year and by multiple teams, so we will switch to using multiple nested case structures.
 
