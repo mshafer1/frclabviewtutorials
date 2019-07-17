@@ -1,4 +1,4 @@
-#!/usr/bin/env bash
+#!/bin/bash -v
 set -e # halt script on error
 
 bundle exec jekyll -v

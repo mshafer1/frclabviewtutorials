@@ -7,10 +7,10 @@ before_script:
  - chmod +x ./deploy.sh
 
 
-script: bash ./deploy.sh
+script: ./deploy.sh
 env:
   global:
-  - ENCRYPTION_LABEL: "acb451626639"
+  - ENCRYPTION_LABEL: "0694fd7b5602"
   - COMMIT_AUTHOR_EMAIL: "travis@frclabviewtutorials.com"
   - NOKOGIRI_USE_SYSTEM_LIBRARIES=true # speeds up installation of html-proofer
 
