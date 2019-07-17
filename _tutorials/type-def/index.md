@@ -22,16 +22,16 @@ Due to the constructs of this data structure, it can be implemented in Periodic 
 
 To start, create a enum control on the front panel, and right click on it. From the menu, select "Make Type Def."
 
-{% include zoomableImage.html path='images/StateMachineCreateTypeDef.png' alt='create the Type Def.' scaler='' height=761 width=504 %}
+{% include zoomableImage.html path='images/StateMachineCreateTypeDef.png' alt='create the Type Def.' height=761 width=504 %}
 
 Right click again and select "Open Type Def"
 
-{% include zoomableImage.html path='images/StateMachineOpenTypeDef.png' alt='Open the typedef' scaler='' height=754 width=632 %}
+{% include zoomableImage.html path='images/StateMachineOpenTypeDef.png' alt='Open the typedef' height=754 width=632 %}
 
 
 Once the Type Def is open, we can set the items of the enum. For this example the Up, Down, and Initialize, have been entered.
 
-{% include zoomableImage.html path='images/modes.png' alt='The initial configuration of a couple of modes' scaler='' height=499 width=515 %}
+{% include zoomableImage.html path='images/modes.png' alt='The initial configuration of a couple of modes' height=499 width=515 %}
 
 Back in Teleop.vi, we will use a feedback node to keep track of the current state.
 
@@ -41,21 +41,21 @@ Here we realize that a mistake was made - we want to have a state for getting th
 
 If we right click on the constant that was made from our original control, we can reopen the typedef.
 
-{% include zoomableImage.html path='images/reopenedTypedef.png' alt='Re-opening the typedef' scaler='' height=514 width=764 %}
+{% include zoomableImage.html path='images/reopenedTypedef.png' alt='Re-opening the typedef' height=514 width=764 %}
 
 
 And we just add the get user input case to the values,
 
-{% include zoomableImage.html path='images/addedOption.png' alt='Adding another option' scaler='' height=499 width=515 %}
+{% include zoomableImage.html path='images/addedOption.png' alt='Adding another option' height=499 width=515 %}
 
 
 We also need to tell LabVIEW to apply the changes
 
-{% include zoomableImage.html path='images/applyChanges.png' alt='Applying the change' scaler='' height=539 width=327 %}
+{% include zoomableImage.html path='images/applyChanges.png' alt='Applying the change' height=539 width=327 %}
 
 Back in teleop, notice that both instances of the Type Def have updated.
 
-{% include zoomableImage.html path='images/teleopUpdated.png' alt='it updated inside Teleo too.' scaler='' height=349 width=231 %}
+{% include zoomableImage.html path='images/teleopUpdated.png' alt='it updated inside Teleo too.' height=349 width=231 %}
 
 
 And we finish out (most of this is implemented in our State Machines tutorial, so for details on that, [click here](/tutorials/state-machine/))

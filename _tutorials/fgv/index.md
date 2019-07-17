@@ -48,20 +48,20 @@ This vi will be the FGV, so it needs a couple of controls.
 * Motor Out - use a numeric indicator for passing the data out to the calling code
 
 
-{% include zoomableImage.html path='images/frontPanel.png' alt='Adding the controls and indicator' scaler='' height=503 width=785 %}
+{% include zoomableImage.html path='images/frontPanel.png' alt='Adding the controls and indicator' height=503 width=785 %}
 
 These controls and the indicator need to be accessible via the connector pane.
 <br/>
 To connect a control or indicator to the connector pane, select the desired terminal.
 
 
-{% include zoomableImage.html path='images/terminal1.png' alt='select a terminal' scaler='' height=171 width=202 %}
+{% include zoomableImage.html path='images/terminal1.png' alt='select a terminal' height=171 width=202 %}
 
 
 Then select the control or indicator to connect it to.
 
 
-{% include zoomableImage.html path='images/terminal2.png' alt='select the corresponding control/indicator' scaler='' height=460 width=800 %}
+{% include zoomableImage.html path='images/terminal2.png' alt='select the corresponding control/indicator' height=460 width=800 %}
 
 ### Block Diagram
 
@@ -75,7 +75,7 @@ The basis of the FGV is a while loop that has two things:
 Add a shift register to the while loop
 
 
-{% include zoomableImage.html path='images/AddShiftRegister.png' alt='Add a shift register to the while loop' scaler='' height=720 width=510 %}
+{% include zoomableImage.html path='images/AddShiftRegister.png' alt='Add a shift register to the while loop' height=720 width=510 %}
 
 
 Put a case structure inside the while loop and connect it the enum to the selector.
@@ -86,7 +86,7 @@ Notice that not all of the enum values are setup as cases initially, so right cl
 For the initialize case, put a default value in.
 
 
-{% include zoomableImage.html path='images/Init.png' alt='Put a default value in the initialize case' scaler='' height=480 width=510 %}
+{% include zoomableImage.html path='images/Init.png' alt='Put a default value in the initialize case' height=480 width=510 %}
 
 
 In the set case, this is where we can enforce the valid range of values. We take the input and run it through a coerce block and store the coerced value in the shift register.
@@ -98,7 +98,7 @@ In the set case, this is where we can enforce the valid range of values. We take
 In the read case, we take the value from the shift register and report it to the indicator.
 
 
-{% include zoomableImage.html path='images/Read.png' alt='Pass the shift register out to the indicator' scaler='' height=441 width=511 %}
+{% include zoomableImage.html path='images/Read.png' alt='Pass the shift register out to the indicator' height=441 width=511 %}
 
 
 We are now faced with a decision of what to do in the other cases where the output is not needed. 
@@ -110,7 +110,7 @@ Two options present themselves:
 This example implements a default.
 
 
-{% include zoomableImage.html path='images/useDefault.png' alt='Use the default value when not reading' scaler='' height=608 width=510 %}
+{% include zoomableImage.html path='images/useDefault.png' alt='Use the default value when not reading' height=608 width=510 %}
 
 And we are Done. <a href="files/fgv.vi" download>Click here to download the finished version</a>
 

@@ -22,7 +22,7 @@ Begin by opening the devices in Begin.vi, notice that we even skip setting the r
 
 Now, place an indicator on the front panel, here is another place where the [TypeDef](/type-def/) can be extremely useful, so we'll take a moment to set one up, notice that we also take this opportunity to rename each element in the cluster to something meaningful (drive joystick, rather than JoystickDevRef)
 
-{% include zoomableImage.html path='images/devRef.png' alt='Indicator' scaler='' height=768 width=1024 %}
+{% include zoomableImage.html path='images/devRef.png' alt='Indicator' height=768 width=1024 %}
 
 
 We can use these names in the Begin.vi block diagram as well - by switching the bundle for a bundle by name - this also bears other advantages like what is demonstrated in the [TypeDef tutorial](/type-def/)
@@ -32,7 +32,7 @@ We can use these names in the Begin.vi block diagram as well - by switching the 
 
 For now, we copy the indicator from Begin, to Teleop and paste it on the front panel (and switch it to a control).
 
-{% include zoomableImage.html path='images/Teleop.png' alt='Teleop' scaler='' height=768 width=1304 %}
+{% include zoomableImage.html path='images/Teleop.png' alt='Teleop' height=768 width=1304 %}
 
 We can connect both the control and the indicator to the terminal block, and connect the two in main.vi
 
