@@ -56,12 +56,12 @@ ENCRYPTED_IV=${!ENCRYPTED_IV_VAR}
 openssl aes-256-cbc \
     -K $ENCRYPTED_KEY \
     -iv $ENCRYPTED_IV \
-    -in ../github_deploy_key.enc \
-    -out ../github_deploy_key -d
+    -in ./github_deploy_key.enc \
+    -out ./github_deploy_key.dec -d
 
-chmod 600 ../github_deploy_key
+chmod 600 ./github_deploy_key.dec
 eval `ssh-agent -s`
-ssh-add ../github_deploy_key
+ssh-add ./github_deploy_key.dec
 
 # Now that we're all set up, we can push.
 git push $SSH_REPO $TARGET_BRANCH
