@@ -6,6 +6,7 @@ exclude:
   - Gemfile.lock
   - cibuild
   - deploy.sh
+  - vendor
 
 permalink: /404.html
 
