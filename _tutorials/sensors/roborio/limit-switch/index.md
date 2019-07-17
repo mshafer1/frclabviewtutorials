@@ -72,7 +72,7 @@ By convention, inputs are on the left so we wire the DevRef's and buttons to ter
 
 1- Select appropriate Terminal,
 
-{% include zoomableImage.html path='images/LimitSwitch_FrontPanelTerminal1.png' alt='Setting the terminal' height=241 width=500 %}
+{% include zoomableImage.html path='images/LimitSwitch_FrontPanelTerminal1.png' alt='Setting the terminal' scale=0.667 height=241 width=500 %}
 
 
 2 - Select Control or Indicator
