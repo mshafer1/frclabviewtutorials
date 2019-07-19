@@ -1,9 +1,14 @@
 {% assign scale = 2 | divided_by: 3.0 %}
 
 {% if include.scaler > 0 %}
-{% assign scale = include.scaler %}
+    {% assign scale = include.scaler %}
 {% endif %}
 
-{% assign img_width = include.width | times: scale %}
 {% assign img_height = include.height | times: scale %}
-<p><img alt="{{ include.alt }}" src="{{ include.path }}" class="pic" onclick="showImage('{{ include.path }}');" title="Click to zoom in" style="width:{{ img_width }}px; height:{{ img_height  }}px;"></p>
+
+{% assign img_width = "auto" %}
+{% if include.width %}
+    {% assign img_width = include.width | times: scale | append: "px" %}
+{% endif %}
+
+<img alt="{{ include.alt }}" src="{{ include.path }}" class="pic" onclick="showImage('{{ include.path }}');" title="Click to zoom in" width="{{ img_width }}" height="{{ img_height  }}px" />
