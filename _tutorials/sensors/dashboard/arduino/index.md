@@ -20,27 +20,27 @@ First, we wire a potentiometer so that it can act as an Analog Input to the Ardu
 
 We wire 5V and Ground from the Arduino to the two outer pins of the potentiometer and connect the wiper pin to A0.
 
-{% include zoomableImage.html path='images/wire_potentiometer.jpg' alt='Wire the potentiometer to A0' scaler='' height=612 width=816 %}
+{% include zoomableImage.html path='images/wire_potentiometer.jpg' alt='Wire the potentiometer to A0' height=612 width=816 %}
 
 The library we will use to interact with the Arduino from LabVIEW is called the LabVIEW Interface for Arduino (now, [LINX](https://www.labviewhacker.com/doku.php?id=libraries:linx:start){:target="_blank"}) which we need to download and install to LabVIEW.
 
-{% include zoomableImage.html path='images/labVIEWMakerHubDownloadLinx.png' alt='On labviewmakerhub.com select download now' scaler='' height=728 width=1366 %}
+{% include zoomableImage.html path='images/labVIEWMakerHubDownloadLinx.png' alt='On labviewmakerhub.com select download now' height=728 width=1366 %}
 
 If prompted, select to open in Package Manager.
 
-{% include zoomableImage.html path='images/OpenInPackageManager.png' alt='open in VI Package Manager' scaler='' height=728 width=1366 %}
+{% include zoomableImage.html path='images/OpenInPackageManager.png' alt='open in VI Package Manager' height=728 width=1366 %}
 
 Select Install
 
-{% include zoomableImage.html path='images/vipmInstall.png' alt='Select install' scaler='' height=544 width=783 %}
+{% include zoomableImage.html path='images/vipmInstall.png' alt='Select install' height=544 width=783 %}
 
 Follow prompts
 
-{% include zoomableImage.html path='images/vipmFollowPrmopts.png' alt='Follow prompts' scaler='' height=544 width=783 %}
+{% include zoomableImage.html path='images/vipmFollowPrmopts.png' alt='Follow prompts' height=544 width=783 %}
 
 To see where the installed library is in the palette, select 'Show in Palettes'
 
-{% include zoomableImage.html path='images/vipmShowInPalettes.png' alt='Show in palettes' scaler='' height=544 width=783 %}
+{% include zoomableImage.html path='images/vipmShowInPalettes.png' alt='Show in palettes' height=544 width=783 %}
 
 Connect the Arduino to the computer and open LabVIEW 
 	(Note: The Arduino driver is needed for this step - 
@@ -52,21 +52,21 @@ From the launch screen (or any screen actually) select Tools -> MakerHub -> LINX
 	LINX Firmware Wizard...
 
 
-{% include zoomableImage.html path='images/lvOpenFirmwareWizard.png' alt='Open Firmware wizard' scaler='' height=602 width=700 %}
+{% include zoomableImage.html path='images/lvOpenFirmwareWizard.png' alt='Open Firmware wizard' height=602 width=700 %}
 
 Select the correct type of Arduino firmware to use and click next.
 
-{% include zoomableImage.html path='images/lvSelectType.png' alt='Select the correct type of Arduino' scaler='' height=509 width=642 %}
+{% include zoomableImage.html path='images/lvSelectType.png' alt='Select the correct type of Arduino' height=509 width=642 %}
 
 Select the port that the Arduino is connected to (See Arduino getting started info for help) and click next to download firmware.
 
 This firmware implements a communication interface that allows for the VIs we installed earlier to control the I/O on the Arduino.
 
-{% include zoomableImage.html path='images/linxSelectPort.png' alt='Select Port' scaler='' height=509 width=642 %}
+{% include zoomableImage.html path='images/linxSelectPort.png' alt='Select Port' height=509 width=642 %}
 
 Click next to download the default firmware image
 
-{% include zoomableImage.html path='images/confirm.png' alt='click next' scaler='' height=509 width=642 %}
+{% include zoomableImage.html path='images/confirm.png' alt='click next' height=509 width=642 %}
 
 ### Create custom dashboard
 
@@ -76,7 +76,7 @@ Select a New -> FRC Dashboard Project.
 
 In the configuration dialogue choose what you would like to name the project and where to save it and click next.
 
-{% include zoomableImage.html path='images/lvConfigProject.png' alt='Select the correct type of Arduino' scaler='' height=449 width=613 %}
+{% include zoomableImage.html path='images/lvConfigProject.png' alt='Select the correct type of Arduino' height=449 width=613 %}
 
 In the Project Explorer window, select and open "Dashboard Main.vi"
 
@@ -87,7 +87,7 @@ Go to the block diagram (press CTRL + e or select Window -> Show Block Diagram).
 
 Scroll to the top (the region that is expected to be edited), and add a While Loop.
 
-{% include zoomableImage.html path='images/lvDefaultBlockDiagram.png' alt='View the block diagram' scaler='' height=728 width=1366 %}
+{% include zoomableImage.html path='images/lvDefaultBlockDiagram.png' alt='View the block diagram' height=728 width=1366 %}
 
 Open the palette (right click if it is not already open) and select MakerHub -> LINX -> Open
 
@@ -95,17 +95,17 @@ This VI creates the communication link to the Arduino for us.
 
 Place it to the left of the new While Loop
 
-{% include zoomableImage.html path='images/lvLinxOpen.png' alt='Get the LINX Open vi' scaler='' height=728 width=1366 %}
+{% include zoomableImage.html path='images/lvLinxOpen.png' alt='Get the LINX Open vi' height=728 width=1366 %}
 
 Right click on the top left terminal of the Open.vi and select Create -> Constant
 
 Select the port the Arduino is connected to.
 
-{% include zoomableImage.html path='images/lvSelectPort.png' alt='Create port constant' scaler='' height=496 width=1304 %}
+{% include zoomableImage.html path='images/lvSelectPort.png' alt='Create port constant' height=496 width=1304 %}
 
 Wire the top right terminal (LINX Resource) to the While Loop and set it to a Shift Register
 
-{% include zoomableImage.html path='images/lvLinxShiftRegister.png' alt='Wire resource to loop' scaler='' height=496 width=1304 %}
+{% include zoomableImage.html path='images/lvLinxShiftRegister.png' alt='Wire resource to loop' height=496 width=1304 %}
 
 Wire the error out from the Open to the While Loop.
 
@@ -115,13 +115,13 @@ Get a Close.vi from the LINX palette and place it to
 
 Wire the error from the left of the While Loop to the close vi
 
-{% include zoomableImage.html path='images/lvWireErrorToClose.png' alt='Wire LINX close VI' scaler='' height=496 width=1304 %}
+{% include zoomableImage.html path='images/lvWireErrorToClose.png' alt='Wire LINX close VI' height=496 width=1304 %}
 
 Branch the error wire and connect it to the stop terminal for the loop.
 
 From the MakerHub -> LINX -> Peripherals -> Analog palette Select the Analog Read.vi
 
-{% include zoomableImage.html path='images/lvGetAI.png' alt='Get Analog Read vi' scaler='' height=728 width=1366 %}
+{% include zoomableImage.html path='images/lvGetAI.png' alt='Get Analog Read vi' height=728 width=1366 %}
 
 And set the Analog channel and pass the reference and the error through the read vi
 
@@ -140,11 +140,11 @@ To make this easier to deal with while in development in LabVIEW, we will create
 
 Place a stop button and an round LED (or some other form of both a Boolean control and indicator) on the front panel.
 
-{% include zoomableImage.html path='images/stopFP.png' alt='Stop vi front panel' scaler='' height=503 width=785 %}
+{% include zoomableImage.html path='images/stopFP.png' alt='Stop vi front panel' height=503 width=785 %}
 
 Connect the output to a terminal on the VI by clicking on the terminal first, then the indicator
 
-{% include zoomableImage.html path='images/connectToTerminal.png' alt='Connect the output to the terminal' scaler='' height=503 width=785 %}
+{% include zoomableImage.html path='images/connectToTerminal.png' alt='Connect the output to the terminal' height=503 width=785 %}
 
 On the block diagram, simply connect the control to the indicator.
 
@@ -156,11 +156,11 @@ Save this vi as stop_button.vi
 
 Drag the VI just created (by the icon) to the block diagram of the Dashboard Main.vi
 
-{% include zoomableImage.html path='images/dragStopVI.png' alt='Drag the Stop VI in' scaler='' height=768 width=1366 %}
+{% include zoomableImage.html path='images/dragStopVI.png' alt='Drag the Stop VI in' height=768 width=1366 %}
 
 Insert an OR on the Error wire going to the stop terminal and connect the output of the Stop VI to the OR
 
-{% include zoomableImage.html path='images/connectStopVI.png' alt='Connect the Stop VI to the or' scaler='' height=728 width=1366 %}
+{% include zoomableImage.html path='images/connectStopVI.png' alt='Connect the Stop VI to the or' height=728 width=1366 %}
 
 The finished product
 
@@ -170,26 +170,26 @@ The finished product
 
 For the sake of testing it, we will replace the numeric indicator with a Horizontal Progress bar.
 
-{% include zoomableImage.html path='images/lvProgressBar.png' alt='replace the numeric indicator with a Horizontal Progress bar' scaler='' height=505 width=1061 %}
+{% include zoomableImage.html path='images/lvProgressBar.png' alt='replace the numeric indicator with a Horizontal Progress bar' height=505 width=1061 %}
 
 Open Properties on the bar.
 
-{% include zoomableImage.html path='images/lvBarOpenProperties.png' alt='Open the properties' scaler='' height=728 width=1366 %}
+{% include zoomableImage.html path='images/lvBarOpenProperties.png' alt='Open the properties' height=728 width=1366 %}
 
 On the scale tab set the Maximum to 5 (the Arduino will read an AI from 0V to 5V).
 
-{% include zoomableImage.html path='images/lvBarPropMax.png' alt='Set the max to 5' scaler='' height=499 width=515 %}
+{% include zoomableImage.html path='images/lvBarPropMax.png' alt='Set the max to 5' height=499 width=515 %}
 
 Run the Dashboard VI. After a few seconds, the connection with the Arduino 
 	will be established and the progress bar will update as you move the potentiometer.
 
-{% include zoomableImage.html path='images/lvBarUpdates.png' alt='Watch the bar update' scaler='' height=442 width=1044 %}
+{% include zoomableImage.html path='images/lvBarUpdates.png' alt='Watch the bar update' height=442 width=1044 %}
 
 To stop running, first open stop_button.vi and press the stop button the front panel
 
 This will cause the Arduino loop to stop executing allowing the Close.vi to close the port to it.
 
-{% include zoomableImage.html path='images/lvPressStop.png' alt='Press the Stop Button' scaler='' height=503 width=785 %}
+{% include zoomableImage.html path='images/lvPressStop.png' alt='Press the Stop Button' height=503 width=785 %}
 
 (How can I know if it worked?, the stop_button vi will stop executing because it is no longer getting called).
 
@@ -201,7 +201,7 @@ See our tutorial on [Connecting a Gyro to the dashboard](/gyro/#sec_To_use_the_d
 
 To send this value to the robot, use the Dashboard Write vi and name the variable.
 
-{% include zoomableImage.html path='images/lvSendToRobot.png' alt='Send to robot' scaler='' height=433 width=1026 %}
+{% include zoomableImage.html path='images/lvSendToRobot.png' alt='Send to robot' height=433 width=1026 %}
 
 The Dashboard VI's can be used to write data on the robot and read it on the dashboard, or vice versa.
 

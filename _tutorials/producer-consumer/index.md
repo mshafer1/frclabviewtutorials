@@ -54,7 +54,7 @@ Here, the joystick is read, and depending on which button is pushed (if any), th
 Here the state is read from the global variable and used to create an encoder set point. Based on that set point and what the encoder currently reads, the motor is set.
 	
 
-{% include zoomableImage.html path='images/timedTasks.png' alt='Updating the motor in timed tasks' scaler='' height=725 width=1360 %}
+{% include zoomableImage.html path='images/timedTasks.png' alt='Updating the motor in timed tasks' height=725 width=1360 %}
 
 ### Summary
 

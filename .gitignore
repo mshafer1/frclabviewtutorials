@@ -4,3 +4,5 @@ _site/
 .jekyll-metadata
 .vs/
 Gemfile.lock
+vendor/
+*.dec

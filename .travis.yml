@@ -3,31 +3,21 @@ rvm:
   - 2.4.4
 
 before_script:
-<<<<<<< HEAD
  - chmod +x ./cibuild
  - chmod +x ./deploy.sh
 
 
-=======
- - chmod +x ./script/cibuild
- - chmod +x ./deploy.sh
-
->>>>>>> trying setup
-script: bash ./deploy.sh
+script: ./deploy.sh
 env:
   global:
-  - ENCRYPTION_LABEL: "acb451626639"
+  - ENCRYPTION_LABEL: "0694fd7b5602"
   - COMMIT_AUTHOR_EMAIL: "travis@frclabviewtutorials.com"
   - NOKOGIRI_USE_SYSTEM_LIBRARIES=true # speeds up installation of html-proofer
 
 # branch whitelist, only for GitHub Pages
 branches:
   only:
-<<<<<<< HEAD
   - master   # build the master branch and push to gh-pages
-=======
-  - gh-pages     # test the gh-pages branch
->>>>>>> trying setup
 
 sudo: false # route your build to the container-based infrastructure for a faster build
 

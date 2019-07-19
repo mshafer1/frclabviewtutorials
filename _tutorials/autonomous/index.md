@@ -26,14 +26,14 @@ This setup has both a major advantage and disadvantage. The advantage is that th
 The disadvantage is because the movements are stored in a control, one must go to edit > make current values default in order to make the changes be saved to the vi.
 
 
-{% include zoomableImage.html path='images/currentValues.png' alt='Setting the current values' scaler='' height=667 width=773 %}
+{% include zoomableImage.html path='images/currentValues.png' alt='Setting the current values' height=667 width=773 %}
 
 ### Autonomous.vi
 
 
 We start by adding a shooter speed to the default array of motor movements.
 
-{% include zoomableImage.html path='images/addingSpeed.png' alt='Adding the shooter speed to the array' scaler='' height=358 width=773 %}
+{% include zoomableImage.html path='images/addingSpeed.png' alt='Adding the shooter speed to the array' height=358 width=773 %}
 
 
 In the block diagram, we enable the for loop that uses the array, and update the current movement indicator (delete and recreate).
