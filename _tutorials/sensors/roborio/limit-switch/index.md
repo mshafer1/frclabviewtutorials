@@ -3,11 +3,9 @@ layout: basic
 title: Limit-Switch - RoboRIO
 ---
 
-
 ### Using Limit Switches
 
 It is often advantageous to use limit switches to set how far an actuator can go. It is possible to [configure hardware using limit switches and Talons](http://crosstheroadelectronics.com/Talon%20SRX%20User%27s%20Guide.pdf#page=20){:target="_blank"}, so that the limit switch directly inputs to the Talon, but presented here is a software solution.
-
 
 ### Insertable VI
 
@@ -22,7 +20,6 @@ Just a formality, but we will start by opening the necessary hardware in Begin.v
 Notice the Normally Closed false constants connected to the Limit Switch Open VIs. They work similarly to the Invert constant on the Motor Open VI. If you find the switch reports true when you expect false and false when you expect true, change the value of the Normally Closed input for that switch.
 
 {% include zoomableImage.html path='images/LimitSwitchOpen_ContextHelp.png' alt='Limit Switch Open Context Help' height=373 width=257 %}
-
 
 ### Actuator.vi
 
@@ -48,13 +45,11 @@ At this point, the wiring is becoming a little chaotic, but we want to keep our 
 
 {% include downloadableImage.html path='images/LimitSwitch_CaseWLimit.png' alt='Using case switches for limit switch' height=363 width=603 %}
 
-
 This is good, we have the motor set by the joystick buttons and using the limit switch to not allow the motor to continue past the limit switches.
 
 Now we want to add some Boolean controls in that will allow us to call this VI in Auto and ignore the joystick input.
 
 {% include downloadableImage.html path='images/LimitSwitch_Auto.png' alt='Add boolean controls' height=307 width=829 %}
-
 
 Now we will go to the front panel and clean it up a little bit.
 
@@ -68,7 +63,6 @@ For this VI to truly be universal, we need to set the buttons to latch mode allo
 
 {% include zoomableImage.html path='images/LimitSwitch_FrontPanelButtons.png' alt='Setting button action mode'  height=1178 width=2033 %}
 
-
 ### Connector Pane
 
 By convention, inputs are on the left so we wire the DevRef's and buttons to terminals on the left.
@@ -77,18 +71,15 @@ By convention, inputs are on the left so we wire the DevRef's and buttons to ter
 
 {% include zoomableImage.html path='images/LimitSwitch_FrontPanelTerminal1.png' alt='Setting the terminal' scale=0.667 height=241 width=500 %}
 
-
 2 - Select Control or Indicator
 
 {% include zoomableImage.html path='images/LimitSwitch_FrontPanelTerminal2.png' alt='Setting the control for that terminal' height=856 width=1472 %}
-
 
 ### Finished
 
 And with that, this vi is ready to be brought into the robot project and called to set the actuator motor from anywhere. - Auto, Teleop, or Timed Tasks.
 
 <a href="files/LimitSwitch.vi" download>click here to download finished version</a>
-
 
 ### Some Possible Improvements
 
