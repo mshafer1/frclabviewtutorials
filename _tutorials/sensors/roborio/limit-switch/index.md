@@ -59,11 +59,11 @@ Now we will go to the front panel and clean it up a little bit.
 
 At this point, we just want to tidy up a bit by doing some alignments and fitting horizontally and vertically by aligning the tops of the clusters and one of the buttons, then a horizontal gap between them and finally the second button was aligned left and vertically compressed.
 
-{% include zoomableImage.html path='images/LimitSwitch_FrontPanel.png' alt='Tyding up the front panel' scaler='' height=712 width=1210 %}
+{% include zoomableImage.html path='images/LimitSwitch_FrontPanel.png' alt='Tyding up the front panel'  height=712 width=1210 %}
 
 For this VI to truly be universal, we need to set the buttons to latch mode allowing the VI to be called once, setting them to true in autonomous, then called again without passing anything so it reads the joystick.
 
-{% include zoomableImage.html path='images/LimitSwitch_FrontPanelButtons.png' alt='Setting button action mode' scaler='' height=1178 width=2033 %}
+{% include zoomableImage.html path='images/LimitSwitch_FrontPanelButtons.png' alt='Setting button action mode'  height=1178 width=2033 %}
 
 
 ### Connector Pane
@@ -72,12 +72,12 @@ By convention, inputs are on the left so we wire the DevRef's and buttons to ter
 
 1- Select appropriate Terminal,
 
-{% include zoomableImage.html path='images/LimitSwitch_FrontPanelTerminal1.png' alt='Setting the terminal' scaler='' height=241 width=500 %}
+{% include zoomableImage.html path='images/LimitSwitch_FrontPanelTerminal1.png' alt='Setting the terminal' scale=0.667 height=241 width=500 %}
 
 
 2 - Select Control or Indicator
 
-{% include zoomableImage.html path='images/LimitSwitch_FrontPanelTerminal2.png' alt='Setting the control for that terminal' scaler='' height=856 width=1472 %}
+{% include zoomableImage.html path='images/LimitSwitch_FrontPanelTerminal2.png' alt='Setting the control for that terminal' height=856 width=1472 %}
 
 
 ### Finished

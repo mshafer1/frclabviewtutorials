@@ -7,11 +7,11 @@ title: Gyro - Dashboard
 
 The default dashboard does not read anything, so the first step is to add a read into the dashboard code. To do this, open an FRC Dashboard Project.
 
-{% include zoomableImage.html path='images/createDashboardProject.png' alt='open dashboard project' scaler='' height=957 width=1116 %}
+{% include zoomableImage.html path='images/createDashboardProject.png' alt='open dashboard project' height=957 width=1116 %}
 
 Open Dashboard Main.vi. If you right click on the Gyro indicator and select find terminal, LabVIEW will point you here.
 
-{% include zoomableImage.html path='images/gyroterminal.png' alt='Gyro indicator in block diagram' scaler='' height=654 width=1516 %}
+{% include zoomableImage.html path='images/gyroterminal.png' alt='Gyro indicator in block diagram' height=654 width=1516 %}
 
 <img alt="" src="examples\gyro\gyroterminal.png" style="width: 601px; height: 259px;" />
 

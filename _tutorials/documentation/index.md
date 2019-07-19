@@ -16,22 +16,22 @@ Documentation is very important, and with a few built in tools, your LabVIEW cod
 
 These allow you to put text anywhere in the code to explain what is going on. They can be used to label which motor is which, etc., but it is better to use labels for that.
 
-{% include zoomableImage.html path='images/comments.png' alt='Adding a comment' scaler='' height=302 width=300 %}
+{% include zoomableImage.html path='images/comments.png' alt='Adding a comment' height=302 width=300 %}
 
 ### Hidden, but useful - labels
 
 Labels are on everything in LabVIEW and (with a few exceptions) you can change them to say what you want. Use them to name your controls and indicators to what they actually represent.
 
-{% include zoomableImage.html path='images/controlLabel.png' alt='Using labels to document controls and indicators' scaler='' height=355 width=292 %}
+{% include zoomableImage.html path='images/controlLabel.png' alt='Using labels to document controls and indicators' height=355 width=292 %}
 
 You can also use them to help keep track of which wire is which.
 
-{% include zoomableImage.html path='images/wireLabel.png' alt='Using labels to document wires' scaler='' height=516 width=906 %}
+{% include zoomableImage.html path='images/wireLabel.png' alt='Using labels to document wires' height=516 width=906 %}
 
 ### Harder to find, but extremely useful - Subdiagram labels
 
 Some items in LabVIEW have subdiagram labels (case structures, loops, etc.) - allowing you to put a nice looking comment inside them. 
-{% include zoomableImage.html path='images/subLabels.png' alt='Adding a sublabel to a while loop' scaler='' height=757 width=906 %}
+{% include zoomableImage.html path='images/subLabels.png' alt='Adding a sublabel to a while loop' height=757 width=906 %}
 
 ### If uncertain how or when to use one of these, or would like to suggest another option, please fill out this form.
 

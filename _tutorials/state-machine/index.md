@@ -23,17 +23,17 @@ Due to the constructs of this data structure, it can be implemented in Periodic 
 
 To start, create a enum control on the front panel, and right click on it. From the menu, select "Make Type Def."
 
-{% include zoomableImage.html path='images/StateMachineCreateTypeDef.png' alt='Creating the TypeDef' scaler='' height=761 width=504 %}
+{% include zoomableImage.html path='images/StateMachineCreateTypeDef.png' alt='Creating the TypeDef' height=761 width=504 %}
 
 
 Right click again and select "Open Type Def"
 
-{% include zoomableImage.html path='images/StateMachineOpenTypeDef.png' alt='Open the TypeDef' scaler='' height=754 width=632 %}
+{% include zoomableImage.html path='images/StateMachineOpenTypeDef.png' alt='Open the TypeDef' height=754 width=632 %}
 
 
 Once the Type Def is open, we can set the items of the enum. For this example the Up, Down, Initialize, and Get Input have been entered.
 
-{% include zoomableImage.html path='images/StateMachineSetEnum.png' alt='Set states' scaler='' height=499 width=515 %}
+{% include zoomableImage.html path='images/StateMachineSetEnum.png' alt='Set states' height=499 width=515 %}
 
 
 Back in Periodic Tasks, we use this Type Def to setup the state machine.
