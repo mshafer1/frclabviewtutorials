@@ -9,7 +9,7 @@ It is often advantageous to use limit switches to set how far an actuator can go
 
 ### Wiring
 
-Connect the Signal and Ground pins from a DIO port to the COM (Common) and either NO (Normally Open) or NC (Normally Closed) terminals on a switch. In general choose the NO terminal as that makes the circuit *on* when the switch is *pressed,* and *off* when the switch is *not pressed* which makes the most since to most peoples brain. However, there are some cases when you would want to use the NC terminal. For example, in a security system the NC terminal would be preferred since if someone were to cut one of the wires, the circuit would break triggering the system (know there may be even better systems than that).
+Connect the Signal and Ground pins from a DIO port to the COM (Common) and either NO (Normally Open) or NC (Normally Closed) terminals on a switch. In general choose the NO terminal as that makes the circuit *on* when the switch is *pressed,* and *off* when the switch is *not pressed* which makes the most since to most peoples' brains. However, there are some cases when you would want to use the NC terminal. For example, in a security system the NC terminal would be preferred since if someone were to cut one of the wires, the circuit would break triggering the system (know there may be even better systems than that).
 
 It may seem odd to use the Ground pin instead of the 5V pin on the roboRIO but behind the scenes the Signal wire voltage is being pulled high when not connected to anything. When the Signal and Ground wires connect, the Signal wire voltage is pulled low more firmly.
 
@@ -51,9 +51,11 @@ Now, this is good, but we wanted the limit switches to turn off the motor at its
 
 *NOTE: If the Limit Switch Get VI reports true when you expect false and false when you expect true, you have a few options:*
 
-1. Change your choice of wiring the NO or NC terminal on the physical switch.
-1. Change the value of the Normally Closed input on the Switch Open VI.
-1. Insert a Not function between the Switch Read VI and the Select function.
+1. *Change your choice of wiring the NO or NC terminal on the physical switch.*
+1. *Change the value of the Normally Closed input on the Switch Open VI.*
+1. *Insert a Not function between the Switch Read VI and the Select function.*
+
+*Ussually #2 is recomended since it is both quick and affects everywhere you get the value of that Switch.*
 
 At this point, the wiring is becoming a little chaotic, but we want to keep our constants so that this vi is generic and can be used year after year and by multiple teams, so we will switch to using multiple nested case structures.
 
