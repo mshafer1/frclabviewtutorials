@@ -7,6 +7,16 @@ title: Limit-Switch - RoboRIO
 
 It is often advantageous to use limit switches to set how far an actuator can go. It is possible to [configure hardware using limit switches and Talons](http://crosstheroadelectronics.com/Talon%20SRX%20User%27s%20Guide.pdf#page=20){:target="_blank"}, so that the limit switch directly inputs to the Talon, but presented here is a software solution.
 
+### Wiring
+
+Connect the Signal and Ground pins from a DIO port to the COM (Common) and either NO (Normally Open) or NC (Normally Closed) terminals on a switch. In general choose the NO terminal as that makes the circuit *on* when the switch is *pressed,* and *off* when the switch is *not pressed* which makes the most since to most peoples brain. However, there are some cases when you would want to use the NC terminal. For example, in a security system the NC terminal would be preferred since if someone were to cut one of the wires, the circuit would break triggering the system (know there may be even better systems than that).
+
+It may seem odd to use the Ground pin instead of the 5V pin on the roboRIO but behind the scenes the Signal wire voltage is being pulled high when not connected to anything. When the Signal and Ground wires connect, the Signal wire voltage is pulled low more firmly.
+
+{% include zoomableImage.html path='images/LimitSwitch_Wiring.png' alt='Opening the limit switch in begin.vi' height=278 width=653 %}
+
+*Image from the FRC Limit Switch example installed with LabVIEW for FRC.*
+
 ### Insertable VI
 
 For the sake of this tutorial, we will construct a VI that takes in the DevRef's for each piece of hardware associated with this example, and performs the logic to set the motor. This will allow this VI to be used in Autonomous and/or Teleop, or if it needs to be run all the time, can be placed in Periodic Tasks.
@@ -19,7 +29,7 @@ Just a formality, but we will start by opening the necessary hardware in Begin.v
 
 Notice the Normally Closed false constants connected to the Limit Switch Open VIs. They work similarly to the Invert constant on the Motor Open VI. If you find the switch reports true when you expect false and false when you expect true, change the value of the Normally Closed input for that switch.
 
-{% include zoomableImage.html path='images/LimitSwitchOpen_ContextHelp.png' alt='Limit Switch Open Context Help' height=373 width=257 %}
+{% include zoomableImage.html path='images/LimitSwitchOpen_ContextHelp.png' alt='Limit Switch Open Context Help' scaler=1 height=373 width=257 %}
 
 ### Actuator.vi
 
@@ -39,7 +49,11 @@ Now, this is good, but we wanted the limit switches to turn off the motor at its
 
 {% include downloadableImage.html path='images/LimitSwitch_BasicWLimits.png' alt='Basic use of limit switch' height=321 width=650 %}
 
-**NOTE: If the limit switch reports true when you expect false and false when you expect true, either insert a Not function between the Read and the Select or change the value of the Normally Closed input to the Limit Switch Open VI. If (a) you wire the switch with the roboRIO's GND and Sig wires (like you should) (b) the wires connect to the GND and Normally Open (NO) terminals on the switch (regardless of which wire goes to which terminal) and (c) the Switch Open VI has a False constant wired to its Normally Closed input (or is not wired at all), the Switch Get VI will output True when the switch is pressed (closed) and False when the switch is not pressed (open).**
+*NOTE: If the Limit Switch Get VI reports true when you expect false and false when you expect true, you have a few options:*
+
+1. Change your choice of wiring the NO or NC terminal on the physical switch.
+1. Change the value of the Normally Closed input on the Switch Open VI.
+1. Insert a Not function between the Switch Read VI and the Select function.
 
 At this point, the wiring is becoming a little chaotic, but we want to keep our constants so that this vi is generic and can be used year after year and by multiple teams, so we will switch to using multiple nested case structures.
 
