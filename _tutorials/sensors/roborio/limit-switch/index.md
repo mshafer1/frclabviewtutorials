@@ -3,11 +3,19 @@ layout: basic
 title: Limit-Switch - RoboRIO
 ---
 
-
 ### Using Limit Switches
 
 It is often advantageous to use limit switches to set how far an actuator can go. It is possible to [configure hardware using limit switches and Talons](http://crosstheroadelectronics.com/Talon%20SRX%20User%27s%20Guide.pdf#page=20){:target="_blank"}, so that the limit switch directly inputs to the Talon, but presented here is a software solution.
 
+### Wiring
+
+Connect the Signal and Ground pins from a DIO port to the COM (Common) and either NO (Normally Open) or NC (Normally Closed) terminals on a switch. In general choose the NO terminal as that makes the circuit *on* when the switch is *pressed,* and *off* when the switch is *not pressed* which makes the most since to most peoples' brains. However, there are some cases when you would want to use the NC terminal. For example, in a security system the NC terminal would be preferred since if someone were to cut one of the wires, the circuit would break triggering the system (know there may be even better systems than that).
+
+It may seem odd to use the Ground pin instead of the 5V pin on the roboRIO but behind the scenes the Signal wire voltage is being pulled high when not connected to anything. When the Signal and Ground wires connect, the Signal wire voltage is pulled low more firmly.
+
+{% include zoomableImage.html path='images/LimitSwitch_Wiring.png' alt='Opening the limit switch in begin.vi' height=278 width=653 %}
+
+*Image from the FRC Limit Switch example installed with LabVIEW for FRC.*
 
 ### Insertable VI
 
@@ -17,8 +25,11 @@ For the sake of this tutorial, we will construct a VI that takes in the DevRef's
 
 Just a formality, but we will start by opening the necessary hardware in Begin.vi. For this example, we will use two limit switches, a joystick, and a motor.
 
-{% include downloadableImage.html path='images/LimitSwitch_Begin.png' alt='Opening the limit switch in begin.vi' height=507 width=220 %}
+{% include downloadableImage.html path='images/LimitSwitch_Begin.png' alt='Opening the limit switch in begin.vi' height=278 width=653 %}
 
+Notice the Normally Closed false constants connected to the Limit Switch Open VIs. They work similarly to the Invert constant on the Motor Open VI. If you find the switch reports true when you expect false and false when you expect true, change the value of the Normally Closed input for that switch.
+
+{% include zoomableImage.html path='images/LimitSwitchOpen_ContextHelp.png' alt='Limit Switch Open Context Help' scaler=1 height=373 width=257 %}
 
 ### Actuator.vi
 
@@ -38,20 +49,23 @@ Now, this is good, but we wanted the limit switches to turn off the motor at its
 
 {% include downloadableImage.html path='images/LimitSwitch_BasicWLimits.png' alt='Basic use of limit switch' height=321 width=650 %}
 
+*NOTE: If the Limit Switch Get VI reports true when you expect false and false when you expect true, you have a few options:*
 
-**NOTE: This is configured for the limit switch to report true when pressed, depending on how it is wired, this may be backwards, if this is the case, merely insert a not gate in between the read and the select.**
+1. *Change your choice of wiring the NO or NC terminal on the physical switch.*
+1. *Change the value of the Normally Closed input on the Switch Open VI.*
+1. *Insert a Not function between the Switch Read VI and the Select function.*
+
+*Ussually #2 is recomended since it is both quick and affects everywhere you get the value of that Switch.*
 
 At this point, the wiring is becoming a little chaotic, but we want to keep our constants so that this vi is generic and can be used year after year and by multiple teams, so we will switch to using multiple nested case structures.
 
 {% include downloadableImage.html path='images/LimitSwitch_CaseWLimit.png' alt='Using case switches for limit switch' height=363 width=603 %}
-
 
 This is good, we have the motor set by the joystick buttons and using the limit switch to not allow the motor to continue past the limit switches.
 
 Now we want to add some Boolean controls in that will allow us to call this VI in Auto and ignore the joystick input.
 
 {% include downloadableImage.html path='images/LimitSwitch_Auto.png' alt='Add boolean controls' height=307 width=829 %}
-
 
 Now we will go to the front panel and clean it up a little bit.
 
@@ -65,7 +79,6 @@ For this VI to truly be universal, we need to set the buttons to latch mode allo
 
 {% include zoomableImage.html path='images/LimitSwitch_FrontPanelButtons.png' alt='Setting button action mode'  height=1178 width=2033 %}
 
-
 ### Connector Pane
 
 By convention, inputs are on the left so we wire the DevRef's and buttons to terminals on the left.
@@ -74,18 +87,15 @@ By convention, inputs are on the left so we wire the DevRef's and buttons to ter
 
 {% include zoomableImage.html path='images/LimitSwitch_FrontPanelTerminal1.png' alt='Setting the terminal' scale=0.667 height=241 width=500 %}
 
-
 2 - Select Control or Indicator
 
 {% include zoomableImage.html path='images/LimitSwitch_FrontPanelTerminal2.png' alt='Setting the control for that terminal' height=856 width=1472 %}
-
 
 ### Finished
 
 And with that, this vi is ready to be brought into the robot project and called to set the actuator motor from anywhere. - Auto, Teleop, or Timed Tasks.
 
 <a href="files/LimitSwitch.vi" download>click here to download finished version</a>
-
 
 ### Some Possible Improvements
 
