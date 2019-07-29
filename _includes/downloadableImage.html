@@ -1,1 +1,14 @@
-<p><a href="{{ include.path }}" download><div style="display:inline-block;"><img alt="{{ include.alt }}" src="{{ include.path }}" class="code" title="click to download vi snippet" style="width:{{ include.width }}px; height:{{ include.height }}px;"></div></a></p>
+{% assign scale = 1.0 %}
+
+{% if include.scaler > 0 %}
+    {% assign scale = include.scaler %}
+{% endif %}
+
+{% assign img_height = include.height | times: scale %}
+
+{% assign img_width = "auto" %}
+{% if include.width %}
+    {% assign img_width = include.width | times: scale | append: "px" %}
+{% endif %}
+
+<p><a href="{{ include.path }}" download><img alt="{{ include.alt }}" src="{{ include.path }}" class="code" title="click to download vi snippet" width="{{ img_width }}" height="{{ img_height }}px" /></a></p>
