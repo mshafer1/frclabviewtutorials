@@ -19,22 +19,16 @@ There are three criteria that should be considered when choosing to implement an
 If you know that race conditions will not occur (you only write to it in one place), then a Global wins. [Globals offer a significant speed performance over FGVs](http://vishots.com/wp-content/uploads/2013/12/ts2147hollenback.pdf#page=25){:target="_blank"}
 	* See also [team 358's documentation for how to create globals](http://www.team358.org/files/programming/ControlSystem2015-2019/labview/CreateGlobal.pdf){:target="_blank"} and [the WPI documentation on global and local variables](https://wpilib.screenstepslive.com/s/currentCS/m/labview/l/696737-local-and-global-variables-in-labview-for-frc){:target="_blank"}.
 
+* Custom Boundaries
+	Here an FGV wins. If you want your shooter wheel speed (or whatever the data represents) to have certain boundaries on it (i.e. from 0 to 0.5), than an FGV can allow you to enforce this whenever setting the value. So an FGV wins in this case.
+
 * Race Conditions
 	This one is the trump card, if one loop (for example, Teleop) needs to increment whatever is currently in the variable, and another occasionally needs to decrement it, use an fgv
 
-* Custom Boundaries
-	Here an FGV wins. If you want your shooter wheel speed (or whatever the data represents) to have certain boundaries on it (i.e. from 0 to 0.5), than an FGV can allow you to enforce this whenever setting the value. So an FGV wins in this case.
-	
-* Performance
-	If you know that race conditions will not occur (you only write to it in one place), then a Global wins. 
-			[Globals offer a significant speed performance over FGVs](http://vishots.com/wp-content/uploads/2013/12/ts2147hollenback.pdf#page=25){:target="_blank"} See also [team 358's documentation for how to create globals](http://www.team358.org/files/programming/ControlSystem2015-2019/labview/CreateGlobal.pdf){:target="_blank"} and [the WPI documentation on global and local variables](https://wpilib.screenstepslive.com/s/currentCS/m/labview/l/696737-local-and-global-variables-in-labview-for-frc){:target="_blank"}.
-* Race Conditions
-	This one is the trump card, if one loop (for example, Teleop) needs to increment whatever is currently in the variable, and another occasionally needs to decrement it, use an fgv
-
-* Custom Boundaries
-	Here an FGV wins. If you want your shooter wheel speed (or whatever the data represents) to have certain boundaries on it (i.e. from 0 to 0.5), than an FGV can allow you to enforce this whenever setting the value. So an FGV wins in this case.
 		
 ### Always consider which is the better data structure for the particular scenario.
+
+
 
 ### How to make an FGV
 

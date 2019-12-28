@@ -13,15 +13,11 @@ Open Dashboard Main.vi. If you right click on the Gyro indicator and select find
 
 {% include zoomableImage.html path='images/gyroterminal.png' alt='Gyro indicator in block diagram' height=654 width=1516 %}
 
-<img alt="" src="examples\gyro\gyroterminal.png" style="width: 601px; height: 259px;" />
-
 Notice that there is nothing wired into it. To adjust this, use a dashboard read to get the gyro value that you will now send from either Teleop or timed tasks.
 
 It should look something like this.
 
 {% include downloadableImage.html path='images/gyroRead.png' alt='Using a dashboard read to set the indicator' height=107 width=336 %}
-
-[<img alt="" src="examples\gyro\gyroRead.png" style="width: 336px; height: 107px;" />](https://docs.google.com/uc?export=download&id=0BwEBnEBtHotGUmhKLV8zZ0dZYkU)
 
 Save the vi, and build the executable in the project. When the build is complete, explore the build and note where it is (personally I put a shortcut to it on the desktop). Once that is complete, close out of that project and open your robot project.
 
@@ -31,13 +27,9 @@ To read the gyro and send it to the dashboard, could look something like this (n
 
 {% include downloadableImage.html path='images/gyroLoop.png' alt='reading the gyro' height=244 width=408 %}
 
-[<img alt="" src="examples\gyro\gyroLoop.png" style="width: 250px; height: 199px;" />](https://docs.google.com/uc?export=download&id=0BwEBnEBtHotGVEplV3hVM2dXWVk)
-
 Finally, the gyro does need to be wired (There are plenty of documentation on that, like [this one](http://team358.org/files/programming/ControlSystem2015-2019/#gyro)) and opened in the begin.vi like so.
 
 {% include downloadableImage.html path='images/gyroOpen.png' alt='opening the gyro in begin.vi' height=105 width=208 %}
-
-[<img alt="" src="examples\gyro\gyroOpen.png" style="width: 208px; height: 105px;" />](https://docs.google.com/uc?export=download&id=0BwEBnEBtHotGUWdmOE5zcXFHRms)
 
 ### To use the dashboard you just created
 
