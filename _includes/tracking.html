@@ -51,6 +51,8 @@ function dismiss(from_cookie=false) {
 
 function optOut() {
 	setCookie(opt_out_cookie, true, 365);
+	// GA provided method to disable tracking for this user: 
+	// https://developers.google.com/analytics/devguides/collection/analyticsjs/user-opt-out
 	window['ga-disable-UA-XXXXX-Y'] = true;
 }
 
@@ -62,6 +64,7 @@ function checkCookie() {
 	optOutVal = JSON.parse(cookieVal);
 
 	if(optOutVal) {
+		optOut();
 		return; // user has opted out, just stop.
 	}
 
