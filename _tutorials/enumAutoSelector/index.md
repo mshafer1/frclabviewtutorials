@@ -6,7 +6,7 @@ description: The built-in selector setup uses case-sensitive, space-conscience s
 
 ### Background
 
-With the default code, there is a Dashboard Write in begin that takes an array of strings and sends them to the dashboard (it's used there to populate a "auto selector" dropdown):
+With the default code, there is a Dashboard Write in begin that takes an array of strings and sends them to the dashboard (it's used there to populate an "auto selector" dropdown):
 
 {% include downloadableImage.html path='images/initial_begin_setup.png' alt='default strings sent to dashboard' %}
 
@@ -18,7 +18,7 @@ These strings are case-sensitive, space-conscience strings - requiring you to ty
 
 ### Let's use an enum
 
-For the sake of simplicity, let's use an enum to provide the strings to the dashboard and to populate our case structure (and enum is a coding construct where names are given to numeric values - here, we're using the names and taking advantage of the defined ordering).
+For the sake of simplicity, let's use an enum to provide the strings to the dashboard and to populate our case structure (an enum is a coding construct where names are given to numeric values - here, we're using the names and taking advantage of the defined ordering).
 
 In Begin.vi, create an enum **control** (we need to access the strings from the enum via properties, which are not available on a constant).
 
@@ -66,7 +66,7 @@ Right click on the case structure, and select "Add case for every value" this wi
 
 {% include zoomableImage.html path='images/make_case_for_every_value.png' alt='Change it to an enum control' %}
 
-(For an example of updating the typedef enum with different or more values, see the [TypeDef Tutorial](/tutorials/type-def/))
+(For an example of later updating the typedef enum with different or more values, see the [TypeDef Tutorial](/tutorials/type-def/))
 
 ### Conclusion
 
