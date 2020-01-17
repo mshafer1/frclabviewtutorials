@@ -10,6 +10,8 @@ exclude:
 
 permalink: /404.html
 
+url: "http://frclabviewtutorials.com"
+
 # Site settings
 title: FRC LabVIEW Tutorials
 description: > # this means to ignore newlines until the next yaml key.
