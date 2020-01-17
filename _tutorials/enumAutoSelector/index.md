@@ -62,7 +62,7 @@ Apply changes:
 
 (save and close the TypeDef)
 
-Right click on the case structure, and select "Add case for every value" this will create a case (branch) for each option in the enum.
+Right click on the case structure and select "Add case for every value" this will create a case (branch) for each option in the enum.
 
 {% include zoomableImage.html path='images/make_case_for_every_value.png' alt='Change it to an enum control' %}
 
