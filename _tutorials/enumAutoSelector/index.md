@@ -6,7 +6,7 @@ description: The built-in selector setup uses case-sensitive, space-conscience s
 
 ### Background
 
-With the default code, there is a Dashboard Write in begin that takes an array of strings:
+With the default code, there is a Dashboard Write in begin that takes an array of strings and sends them to the dashboard (it's used there to populate a "auto selector" dropdown):
 
 {% include downloadableImage.html path='images/initial_begin_setup.png' alt='default strings sent to dashboard' %}
 
@@ -18,7 +18,7 @@ These strings are case-sensitive, space-conscience strings - requiring you to ty
 
 ### Let's use an enum
 
-For the sake of simplicity, let's use a typedef'd enum to provide the strings to the dashboard and to populate our case structure.
+For the sake of simplicity, let's use an enum to provide the strings to the dashboard and to populate our case structure (and enum is a coding construct where names are given to numeric values - here, we're using the names and taking advantage of the defined ordering).
 
 In Begin.vi, create an enum **control** (we need to access the strings from the enum via properties, which are not available on a constant).
 
@@ -62,13 +62,15 @@ Apply changes:
 
 (save and close the TypeDef)
 
-Right click on the case structure, and select "Add case for every value"
+Right click on the case structure, and select "Add case for every value" this will create a case (branch) for each option in the enum.
 
 {% include zoomableImage.html path='images/make_case_for_every_value.png' alt='Change it to an enum control' %}
 
+(For an example of updating the typedef enum with different or more values, see the [TypeDef Tutorial](/tutorials/type-def/))
+
 ### Conclusion
 
-You now have an enum that (if edited) will update both in Begin - where it's strings are sent to the dashboard to select an auto, and in auto - where it is used to parse the returned string and manage possible case structure values.
+You now have an enum that (if edited) will update both in Begin.vi - where it's strings are sent to the dashboard to select an auto, and in Autonomous(...).vi - where it is used to parse the returned string and manage possible case structure values.
 
 ### Possible Improvements
 
